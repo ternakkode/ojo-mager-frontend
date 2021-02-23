@@ -38,7 +38,27 @@
     </header>
     <!-- end header -->
 
+    <!-- main content diisi disini ya-->
+        <main style="height: 1000px;">
+
+        </main>
+    <!-- end content -->
+
+
+    <!-- footer -->
+    <footer>
+        <p>
+            <span id="years"></span> Copyright Team D - All rights reserved
+        </p>
+    </footer>
+
     <!-- javascript -->
     <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/js/bootstrap.min.js">
+    <script>
+        const year = document.querySelector('#years');
+        
+        // tampilkan tahun
+        year.innerHTML = new Date().getFullYear();
+    </script>
 </body>
 </html>
