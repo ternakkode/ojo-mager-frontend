@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymnasium</title>
+    <!-- style own -->
+    <link rel="stylesheet" href="./../assets/style/styles.css">
+    <!-- boostrap -->
+    <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- struktur file header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar__icon">
+                    <img src="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mr-auto" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Program Latihan</a>
+                        <a class="nav-item nav-link" href="#">Artikel</a>
+                        <a class="nav-item nav-link" href="#">Tentang Kami</a>
+                    </div>
+                </div>
+                <div class="my-0 navbar-nav">
+                    <a href="#" class="nav-item nav-link">Profil Saya</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end header -->
+
+    <!-- main content diisi disini ya-->
+        <main style="height: 1000px;">
+
+        </main>
+    <!-- end content -->
+
+
+    <!-- footer -->
+    <footer>
+        <p>
+            <span id="years"></span> Copyright Team D - All rights reserved
+        </p>
+    </footer>
+
+    <!-- javascript -->
+    <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/js/bootstrap.min.js">
+    <script>
+        const year = document.querySelector('#years');
+        
+        // tampilkan tahun
+        year.innerHTML = new Date().getFullYear();
+    </script>
+</body>
+</html>

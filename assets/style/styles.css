@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Lato', sans-serif !important;
+}
+
+header .navbar .navbar__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 20px;
+  background: #c4c4c4;
+}
+
+footer {
+  background: #c4c4c4;
+  padding: 15px;
+  text-align: center;
+}
+
+footer p {
+  margin: auto;
+}
+/*# sourceMappingURL=styles.css.map */
