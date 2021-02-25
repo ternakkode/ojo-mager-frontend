@@ -4,6 +4,10 @@
 @import "./base/global";
 
 // component
+@import "./component/titlebar";
+@import "./component/filterSearchBox";
+@import "./component/cardContent";
+@import "./component/jumbotron";
 
 // layouts
 @import "./layouts/header";

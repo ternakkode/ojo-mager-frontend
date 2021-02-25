@@ -1,0 +1,14 @@
+.filter-search-box{
+    padding: 35px 0;
+
+    .filter__box, .search__box{
+        display: flex;
+        align-items: baseline;
+        margin: 0 30px;
+        cursor: pointer;
+
+        svg{
+            margin-right: 8px;
+        }
+    }
+}
