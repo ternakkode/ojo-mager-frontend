@@ -54,34 +54,32 @@
 
     <!-- main content diisi disini ya-->
         <main>
-            <!-- jumbotron video dan info -->
-            <div class="jumbotron">
-                <div class="container-fluid">
+            <!-- title bar -->
+            <div class="title-bar">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-12">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wtFPIOV2bWM"></iframe>
-                            </div>
+                        <div class="col">
+                            <h2>Artikel</h2>
                         </div>
-                        <div class="col-md-4 col-12">
-                            <div class="info__video">
-                                <div class="info__video--title">
-                                    <h3>Judul Exercise</h3>
-                                </div>
-                                <div class="info__video--content">
-                                    <p>Durasi: <span>12 menit</span></p>
-                                    <p>Tingkat: <span>Mudah</span></p>
-                                    <p>Alat: <span>Dumbbell</span></p>
-                                    <p>Tipe Latihan: <span>Latihan Kekuatan</span></p>
-                                </div>
-                                <div class="info__video--like">
-                                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M14.5 0C12.76 0 11.09 0.81 10 2.09C8.91 0.81 7.24 0 5.5 0C2.42 0 0 2.42 0 5.5C0 9.28 3.4 12.36 8.55 17.04L10 18.35L11.45 17.03C16.6 12.36 20 9.28 20 5.5C20 2.42 17.58 0 14.5 0ZM10.1 15.55L10 15.65L9.9 15.55C5.14 11.24 2 8.39 2 5.5C2 3.5 3.5 2 5.5 2C7.04 2 8.54 2.99 9.07 4.36H10.94C11.46 2.99 12.96 2 14.5 2C16.5 2 18 3.5 18 5.5C18 8.39 14.86 11.24 10.1 15.55Z" fill="black"/>
-                                    </svg>
-                                    
-                                    <p>Tambahkan ke Favorite</p>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- box filter and search -->
+            <div class="filter-search-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="filter__box">
+                            <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 12H11V10H7V12ZM0 0V2H18V0H0ZM3 7H15V5H3V7Z" fill="black"/>
+                            </svg>
+                            <p>Filter</p>
+                        </div>
+                        <div class="search__box">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z" fill="black"/>
+                            </svg>
+                            <p>Cari</p>
                         </div>
                     </div>
                 </div>
@@ -90,19 +88,14 @@
             <!-- main-card content -->
             <div class="card__content">
                 <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h2>Program Lainnya</h2>
-                        </div>
-                    </div>
                     <!-- ini akan dinamis -->
                     <div class="row">
                         <div class="col-md-4 col-12">
                             <div class="card">
                                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
                                     </div>
                             </div>
                         </div>
@@ -110,8 +103,8 @@
                             <div class="card">
                                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
                                     </div>
                             </div>
                         </div>
@@ -119,37 +112,8 @@
                             <div class="card">
                                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 col-12">
-                            <div class="card">
-                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12">
-                            <div class="card">
-                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12">
-                            <div class="card">
-                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
                                     </div>
                             </div>
                         </div>
@@ -159,8 +123,8 @@
                             <div class="card">
                                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
                                     </div>
                             </div>
                         </div>
@@ -168,8 +132,8 @@
                             <div class="card">
                                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
                                     </div>
                             </div>
                         </div>
@@ -177,8 +141,37 @@
                             <div class="card">
                                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">Tipe Olahraga . <span>Waktu</span></h5>
-                                        <h2 class="card-text">Judul Program Olahraga</h2>
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kategori Artikel</h5>
+                                        <h2 class="card-text">Judul Artikel</h2>
                                     </div>
                             </div>
                         </div>
@@ -195,7 +188,6 @@
             <span id="years"></span> Copyright Team D - All rights reserved
         </p>
     </footer>
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

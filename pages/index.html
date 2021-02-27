@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,9 @@
     <link rel="stylesheet" href="./../assets/style/styles.css">
     <!-- boostrap -->
     <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/css/bootstrap.min.css">
+    
 </head>
+
 <body>
 
     <!-- struktur file header -->
@@ -19,7 +22,8 @@
                 <a class="navbar__icon">
                     <img src="">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse mr-auto" id="navbarNavAltMarkup">
@@ -30,8 +34,20 @@
                         <a class="nav-item nav-link" href="#">Tentang Kami</a>
                     </div>
                 </div>
-                <div class="my-0 navbar-nav">
-                    <a href="#" class="nav-item nav-link">Profil Saya</a>
+                <div class="my-0">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="profile" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Profil Saya
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="profile">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -39,9 +55,9 @@
     <!-- end header -->
 
     <!-- main content diisi disini ya-->
-        <main style="height: 1000px;">
+    <main style="height: 1000px;">
 
-        </main>
+    </main>
     <!-- end content -->
 
 
@@ -52,13 +68,23 @@
         </p>
     </footer>
 
-    <!-- javascript -->
-    <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/js/bootstrap.min.js">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <!-- javascript boostrap -->
+    <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/js/bootstrap.js">
     <script>
         const year = document.querySelector('#years');
-        
+
         // tampilkan tahun
         year.innerHTML = new Date().getFullYear();
     </script>
 </body>
+
 </html>
