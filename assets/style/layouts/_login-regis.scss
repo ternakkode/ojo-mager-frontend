@@ -1,0 +1,155 @@
+.login{
+    .content__login{
+        form{
+            label{
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
+
+        a{
+            color: $Color2;
+            display: block;
+            font-size: 14px;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .registerBox{
+            width: 100%;
+            text-align: center;
+
+            p{
+                font-weight: 400;
+                font-size: 12px;
+            }
+
+            a{
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.register{ 
+    .content__register{
+        .formBox{
+            width: 60%;
+
+            .loginBox{
+                width: 100%;
+                text-align: center;
+    
+                p{
+                    font-weight: 400;
+                    font-size: 12px;
+                }
+    
+                a{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.forgotPassword{
+    .content__forgotPassword{
+        .formBox{
+            .formBox__header{
+                p{
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.changePassword{
+    .content__changePassword{
+        .formBox{
+            .formBox__header{
+                margin-bottom: 20px;
+
+                p{
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+                ul{
+                    padding-left: 20px;
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.verification{
+    .content__verification{
+        .formBox{
+            width: 60%;
+            
+            .formBox__header{
+                margin-bottom: 20px;
+
+                ul{
+                    padding-left: 20px;
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.login,.register, .forgotPassword,.changePassword,.verification{
+    width: 100%; 
+    height: 100vh; 
+    display: flex;
+
+    .content__register,.content__login, .content__forgotPassword,.content__changePassword,.content__verification{
+        width: 40%; 
+        height: 100%; 
+        position: relative; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+
+        h2{
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        button{
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .footer{
+            position: absolute; 
+            bottom: 0; 
+            width: 100%; 
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+
+    .boxImg{
+        width: 60%; 
+        height: 100%; 
+        position: relative;
+    
+        img{
+            width: 100%; 
+            height: 100%; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            object-fit: cover;
+        }
+    }
+}
