@@ -19,10 +19,12 @@ app.use(cookieParser());
 // routes
 const loginRoutes = require('./routes/login');
 const registrasiRoutes = require('./routes/register');
+const artikelRoutes = require('./routes/artikel');
 
 
 app.use(loginRoutes);
 app.use(registrasiRoutes);
+app.use(artikelRoutes);
 
 
 app.listen(3005);
