@@ -1,0 +1,30 @@
+{
+  "name": "mini-project",
+  "version": "1.0.0",
+  "description": "coming soon",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sweetalert2": "^10.15.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/synrgy-mini-project-batch-2/team-c/frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/synrgy-mini-project-batch-2/team-c/frontend/issues"
+  },
+  "homepage": "https://gitlab.com/synrgy-mini-project-batch-2/team-c/frontend#readme"
+}
