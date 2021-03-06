@@ -27,4 +27,7 @@ app.use(registrasiRoutes);
 app.use(artikelRoutes);
 
 
-app.listen(3005);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is listening on http://localhost:${port}`);
+})

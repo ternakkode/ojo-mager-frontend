@@ -1,12 +1,26 @@
 // untuk header
 header {
     .navbar{
-        .navbar__icon{
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin: 0 20px;
-            background: $Color1;
+        .btn{
+            border-radius: 4px;
+            font-family: 'Nunito Sans', sans-serif;
         }
+        .navbar-nav{
+            font-family:'Nunito Sans';
+            font-size: 16px;
+        }
+        .nav-link{
+            margin-right: 30px;
+            position: relative;
+        }
+        .nav-link:hover::after{
+            content: "";
+            display: block;
+            margin: auto;
+            padding-bottom: 5px;
+            margin-bottom: -8px;
+            border-bottom: 3px solid #0B63DC;
+        }
+        
     }
 }
