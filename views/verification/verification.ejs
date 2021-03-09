@@ -7,18 +7,12 @@
                 <div class="formBox__header">
                     <h2>Verifikasi Kode</h2>
                     <ul>
-                        <li>Anda akan menerima kode verifikasi e-mail saat kamu mendaftar. Masukkan kode yang kami kirim kepada Anda.</li>
-                        <li>Jika Anda belum menerima kode verifikasi di e-mail, <a href="#" id="verification" class="text-primary font-weight-bold">kirim ulang email verifikasi</a></li>
+                        <li>Anda akan menerima link verifikasi di e-mail saat kamu mendaftar. Klik link tersebut untuk mengkonfirmasi pendaftaran akun Anda untuk bisa lanjut mengakses website kami.</li>
+                        <li>Jika Anda belum menerima link verifikasi di e-mail, <a href="#" id="verification" class="text-primary font-weight-bold">kirim ulang email verifikasi</a></li>
                     </ul>
                 </div>
                 <div class="formBox__content">
-                    <form>
-                        <div class="form-group">
-                            <label for="password">Masukkan Kode Verifikasi</label>
-                            <input type="text" class="form-control" id="password" name="kode" placeholder="Masukkan Kode">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Ganti Password</button>
-                    </form>
+                    <button class="btn btn-primary">Kembali ke Beranda</button>
                 </div>
             </div>
 
@@ -57,11 +51,11 @@
 
         const token = getCookie("token");
 
-        document.addEventListener("DOMContentLoaded", () => {
-                if(!token){
-                    window.location.href= "/login";
-                }                
-        });
+        // document.addEventListener("DOMContentLoaded", () => {
+        //         if(!token){
+        //             window.location.href= "/login";
+        //         }                
+        // });
         
         verificationBtn.addEventListener('click', () => {
             // nembak api untuk verification

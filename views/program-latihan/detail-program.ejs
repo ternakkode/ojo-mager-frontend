@@ -1,0 +1,286 @@
+<%- include('./../includes/head.ejs')%>
+
+    <body>
+
+        <%- include('./../includes/navigation.ejs')%>
+
+            <!-- main content diisi disini ya-->
+            <main>
+                <!-- jumbotron video dan info -->
+                <div class="jumbotron">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-8 col-12">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/wtFPIOV2bWM"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="info__video">
+                                    <div class="info__video--title">
+                                        <h3>Judul Exercise</h3>
+                                    </div>
+                                    <div class="info__video--content">
+                                        <p>Durasi: <span>12 menit</span></p>
+                                        <p>Tingkat: <span>Mudah</span></p>
+                                        <p>Alat: <span>Dumbbell</span></p>
+                                        <p>Tipe Latihan: <span>Latihan Kekuatan</span></p>
+                                    </div>
+                                    <div class="info__video--like">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.5 0C12.76 0 11.09 0.81 10 2.09C8.91 0.81 7.24 0 5.5 0C2.42 0 0 2.42 0 5.5C0 9.28 3.4 12.36 8.55 17.04L10 18.35L11.45 17.03C16.6 12.36 20 9.28 20 5.5C20 2.42 17.58 0 14.5 0ZM10.1 15.55L10 15.65L9.9 15.55C5.14 11.24 2 8.39 2 5.5C2 3.5 3.5 2 5.5 2C7.04 2 8.54 2.99 9.07 4.36H10.94C11.46 2.99 12.96 2 14.5 2C16.5 2 18 3.5 18 5.5C18 8.39 14.86 11.24 10.1 15.55Z"
+                                                fill="black" />
+                                        </svg>
+
+                                        <p>Tambahkan ke Favorite</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- main-card content -->
+                <div class="card__content">
+                    <div class="container">
+                        <div class="row align-items-baseline">
+                            <div class="col">
+                                <h2>Video Olahraga Lainnya</h2>
+                            </div>
+                            <div class="col text-right align-text-bottom">
+                                <a href="#">Lihat semua <svg width="19" height="17" viewBox="0 0 19 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 8.5H17.5" stroke="#0075E7" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10.5 1.5L17.5 8.5L10.5 15.5" stroke="#0075E7" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- ini akan dinamis -->
+                        <div class="row">
+                            <!-- foreach -->
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end foreach -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="./images/program_1.png"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="title__flexbox d-flex align-items-baseline">
+                                            <h5 class="card-title bg-primary text-white px-2 py-1 rounded mr-3">Cardio</h5>
+                                            <svg class="mr-2" width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12.5703 0.0100098H6.57031V2.01001H12.5703V0.0100098ZM8.57031 13.01H10.5703V7.01001H8.57031V13.01ZM16.6003 6.39001L18.0203 4.97001C17.5903 4.46001 17.1203 3.98001 16.6103 3.56001L15.1903 4.98001C13.5976 3.69834 11.6146 2.9997 9.57031 3.00001C4.60031 3.00001 0.570312 7.03001 0.570312 12C0.570312 16.97 4.59031 21 9.57031 21C14.5503 21 18.5703 16.97 18.5703 12C18.5703 9.89001 17.8303 7.94001 16.6003 6.39001ZM9.57031 19.01C5.70031 19.01 2.57031 15.88 2.57031 12.01C2.57031 8.14001 5.70031 5.01001 9.57031 5.01001C13.4403 5.01001 16.5703 8.14001 16.5703 12.01C16.5703 15.88 13.4403 19.01 9.57031 19.01Z"
+                                                        fill="#757575" />
+                                            </svg>
+                                            <span>45 detik</span>
+                                        </div>
+                                        <h4 class="card-text font-weight-bold">Hand Stretching</h4>
+                                        <P class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                            elit. Perferendis veniam doloribus distinctio, nesciunt, quas deserunt
+                                            beatae qui, provident dolorem commodi nam dolores! Officiis nihil deserunt
+                                            in facilis commodi sed minima!</P>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- end content -->
+
+
+            <%- include('./../includes/end.ejs')%>
