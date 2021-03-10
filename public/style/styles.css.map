@@ -12,7 +12,8 @@
         "component/_jumbotron.scss",
         "layouts/_header.scss",
         "layouts/_footer.scss",
-        "layouts/_login-regis.scss"
+        "layouts/_login-regis.scss",
+        "pages/_profile.scss"
     ],
     "names": [],
     "file": "styles.css"

@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OjoMager</title>
+    <!-- style own -->
+    <link rel="stylesheet" href="../../public/style/styles.css">
+    <!-- boostrap -->
+    <link rel="stylesheet" href="../../public/vendors/bootstrap/dist/css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container profile">
+        <p class="title">Edit Profile</p>
+        <p class="text-muted description">Kamu Bisa mengubah nama, email, centang untuk melanjutkan fitur subscribe</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="password">Kata Sandi</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="confirm_password">Konfirmasi Kata Sandi</label>
+                    <input type="password" class="form-control" id="confirm_password">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="is_subscribe_newsletter">
+                    <label class="form-check-label check-box" for="is_subscribe_newsletter">Subscribe Kalimat Motivasi</label>
+                    <small id="subscribeHelp" class="form-text text-muted label-checkbox">Kamu akan mendapatkan kalimat penyemangat dan motivasi melalui e-mail</small>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center button-submit-wrapper">
+                <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
