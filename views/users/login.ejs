@@ -1,0 +1,86 @@
+<%- include('./../includes/head.ejs')%>
+<body>
+    <!-- login page -->
+    <section class="login">
+        <div class="content__login">
+            <div class="formBox" >
+                <h2>Halo! <br> Selamat Datang Kembali</h2>
+                <div class="formBox__content">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <a class="text-right" href="/forgot-password">Lupa Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+
+                        <div class="registerBox">
+                            <p>Belum Memiliki Akun? <a href="/register" class="text-primary">Daftar Sekarang</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer">
+                &copy; 2021 OjoMager, Inc All Right Reserved
+            </div>
+        </div>
+        <%- include('./../includes/images.ejs') %>
+    </section>
+
+    <script src="/script/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $('#loginForm').submit((e) => {
+            e.preventDefault();
+
+            const baseUrl = 'https://ojo-mager-backend.herokuapp.com/api';
+            const email = $('#email').val();
+            const password = $('#password').val();
+
+            axios({
+                method: 'post',
+                url: baseUrl + '/users/login',
+                data: {
+                    email,
+                    password
+                }
+            }).then(response => {
+                const user = response.data.user;
+
+                setCookie('jwt_token', response.data.token, 1);
+                setCookie('user', JSON.stringify({
+                    id: user.id,
+                    email: user.email,
+                    name: user.name,
+                    is_verified: user.is_verified,
+                    is_subscribe_newsletter: user.is_subscribe_newsletter
+                 }), 1)
+
+                if (user.is_verified) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Selamat! kamu telah berhasil login pada website OjoMager',
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+
+                    window.location.replace('/');
+                } else {
+                    window.location.replace('/verification?user_id=' + user.id);
+                }
+            });
+            /*
+                @TODO tambah error handling
+            */
+        });
+    </script>
+</body>
+
+</html>

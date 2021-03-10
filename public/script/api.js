@@ -1,0 +1,1 @@
+const BASE_URL = 'https://ojo-mager-backend.herokuapp.com/api';
