@@ -103,6 +103,10 @@ html {
   margin-right: 20px;
 }
 
+header {
+  margin-bottom: 56px;
+}
+
 header .navbar .btn {
   border-radius: 4px;
   font-family: 'Nunito Sans', sans-serif;
@@ -114,7 +118,7 @@ header .navbar .navbar-nav {
 }
 
 header .navbar .nav-link {
-  margin-right: 30px;
+  margin: 0 15px;
   position: relative;
 }
 

@@ -10,8 +10,8 @@ exports.postLogin = (req, res) => {
         .then(results => {
                 const isVerified = results.data.data.user.is_verified;
                 const token = results.data.data.token;
-            const name = results.data.data.user.name;
-            const oneDayCookies = 24 * 3600 * 1000;
+                const name = results.data.data.user.name;
+                const oneDayCookies = 24 * 3600 * 1000;
                 res.cookie('username', name);
                 res.cookie('token', token, { expires: new Date(Date.now() + oneDayCookies) });
             
