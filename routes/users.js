@@ -24,4 +24,8 @@ usersRoute.get('/verification/process', (req, res) => {
     res.render('users/verification-process')
 });
 
+usersRoute.get('/profile', (req, res) => {
+    res.render('users/profile')
+});
+
 module.exports = usersRoute;
