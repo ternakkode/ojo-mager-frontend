@@ -51,9 +51,9 @@
                     password
                 }
             }).then(response => {
-                const user = response.data.user;
+                const user = response.data.data.user;
 
-                setCookie('jwt_token', response.data.token, 1);
+                setCookie('jwt_token', response.data.data.token, 1);
                 setCookie('user', JSON.stringify({
                     id: user.id,
                     email: user.email,
@@ -69,11 +69,19 @@
                         text: 'Selamat! kamu telah berhasil login pada website OjoMager',
                         showConfirmButton: false,
                         timer: 1000
+                    }).then(() => {
+                        window.location.replace('/');
                     });
-
-                    window.location.replace('/');
                 } else {
-                    window.location.replace('/verification?user_id=' + user.id);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Selamat! kamu telah berhasil login pada website OjoMager',
+                        showConfirmButton: false,
+                        timer: 1000
+                    }).then(() => {
+                        window.location.replace('/verification?user_id=' + user.id);
+                    });
                 }
             });
             /*
