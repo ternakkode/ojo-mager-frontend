@@ -1,9 +1,21 @@
 footer {
-    background: $Color1;
-    padding: 15px;
-    text-align: center;
+    background-color: #202432;
+    font-family: 'Nunito Sans', sans-serif;
+    width:auto;
+    p.end{
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        background-color:#202432;
+        padding: 0;
+        margin: 0;
 
-    p{
-        margin: auto;
+        &::before{
+            content: "";
+            display:block;
+            width: 90%;
+            border-top: 1px solid white;
+            margin: auto;
+            margin-bottom: 12px;
+        }
     }
 }

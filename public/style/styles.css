@@ -103,14 +103,8 @@ html {
   margin-right: 20px;
 }
 
-header .navbar .navbar-brand {
-  font-family: 'Nunito Sans', 'Viga',  sans-serif;
-  color: blue;
-  font-weight: 400;
-}
-
 header .navbar .btn {
-  border-radius: 40px;
+  border-radius: 5px;
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -134,13 +128,26 @@ header .navbar .nav-link:hover::after {
 }
 
 footer {
-  background: #c4c4c4;
-  padding: 15px;
-  text-align: center;
+  background-color: #202432;
+  font-family: 'Nunito Sans', sans-serif;
+  width: auto;
 }
 
-footer p {
+footer p.end {
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  background-color: #202432;
+  padding: 0;
+  margin: 0;
+}
+
+footer p.end::before {
+  content: "";
+  display: block;
+  width: 90%;
+  border-top: 1px solid white;
   margin: auto;
+  margin-bottom: 12px;
 }
 
 .login .content__login form label {
@@ -279,5 +286,27 @@ footer p {
   left: 0;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.artikel {
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 20px 0 40px 0;
+}
+
+.artikel .row {
+  row-gap: 20px;
+  margin-bottom: 30px;
+}
+
+.artikel .dropdown {
+  margin-bottom: 50px;
+}
+
+.artikel #tombolartikel {
+  border-radius: 5px;
+}
+
+.artikel .pagination {
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */
