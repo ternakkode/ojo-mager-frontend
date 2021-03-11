@@ -1,0 +1,9 @@
+.listOlahraga{
+    .pagination > li > a {
+        border: none;
+
+        &:hover{
+            background: $Color4;
+        }
+    }
+}
