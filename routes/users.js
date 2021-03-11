@@ -1,7 +1,5 @@
-const usersRoute = require('express').Router();
-
-const User = require('../api/Users');
-const user = new User();
+import express from 'express';
+const usersRoute = express.Router();
 
 usersRoute.get('/register', (req, res) => {
     res.render('users/register');
@@ -38,4 +36,4 @@ usersRoute.get('/profile', async (req, res) => {
     res.render('users/profile', { user: userInformation })
 });
 
-module.exports = usersRoute;
+export default usersRoute;

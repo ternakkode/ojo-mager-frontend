@@ -1,4 +1,4 @@
-const User = require('../api/User')
+import User from '../public/api';
 
 async function isLogin(req, res, next) {
     const token = req.cookies.jwt_token;
@@ -7,16 +7,16 @@ async function isLogin(req, res, next) {
     }
 
     const userApi = new User();
-    const getProfile = await userApi.getProfile(token);
+    const user = await userApi.getProfile(token);
 
-    if (getProfile.status != 200) {
+    if (!user) {
         res.cookie('jwt_token', null, {maxAge: -1});
         res.cookie('user', null, {maxAge: -1});
         res.redirect('/login');
     }
 
-    req.user = getProfile.data.data;
+    req.user = user;
     next();
 }
 
-module.exports = isLogin;
+export default isLogin;

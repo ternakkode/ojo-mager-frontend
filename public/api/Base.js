@@ -1,8 +1,8 @@
-const axios = require('axios');
+import axios from 'axios';
 
 class Base {
     constructor() {
-        this.base_url = process.env.BASE_URL || 'https://ojo-mager-backend.herokuapp.com/api'
+        this.base_url = process.env.BASE_URL || 'https://ojo-mager-backend.herokuapp.com/api/'
     }
 
     needLogin(token) {
@@ -44,4 +44,4 @@ class Base {
     }
 }
 
-module.exports = Base;
+export default Base;
