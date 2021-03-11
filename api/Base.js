@@ -5,12 +5,13 @@ class Base {
         this.base_url = process.env.BASE_URL || 'https://ojo-mager-backend.herokuapp.com/api'
     }
 
-    async getRequest(endpoint, data = {}, headers = {}) {
+    async getRequest(endpoint, params = {}, data = {}, headers = {}) {
         return await axios({
             method: 'get',
             url: this.base_url + endpoint,
-            data,
-            headers
+            headers,
+            params,
+            data
         })
     }
 }

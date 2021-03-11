@@ -12,7 +12,7 @@ class User extends Base {
             'Authorization': 'Bearer ' + token
         });
 
-        return response.data.data;
+        return response;
     }
 }
 
