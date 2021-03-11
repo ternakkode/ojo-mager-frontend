@@ -6,11 +6,11 @@ class User extends Base {
     }
 
     async getProfile(token) {
-        const url = '/users/me';
+        this.needLogin(token);
+        this.setMethod('get');
+        this.setEndpoint('users/me');
 
-        const response = await this.getRequest(url, {}, {
-            'Authorization': 'Bearer ' + token
-        });
+        const response = await this.createRequest();
 
         return response;
     }
