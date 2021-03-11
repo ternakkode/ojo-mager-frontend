@@ -1,16 +1,20 @@
-<%- include('./../includes/head.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../includes/head', { title: 'Registrasi' }) %>
+</head>
 
 <body>
-    <!-- register page -->
     <section class="register">
         <div class="content__register">
-            <div class="formBox" >
+            <div class="formBox">
                 <h2>Daftar Akun</h2>
                 <div class="formBox__content mt-3">
                     <form id="registerForm">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="name" name="name"  placeholder="Masukkan nama..">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama..">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
@@ -18,7 +22,8 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password">
                         </div>
                         <input type="hidden" name="role" value="user">
                         <button type="submit" class="btn btn-primary">Daftar</button>
@@ -35,60 +40,67 @@
         </div>
         <%- include('./../includes/images.ejs') %>
     </section>
-    <!-- end register page -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="/api.js"></script>
 
-    <script>
-        const articles = new api.Article();
-        articles.getArticles().then(res => {
-            console.log(res);
-        });
-        
+    <%- include('./../includes/end.ejs') %>
+    <script>        
         $('#registerForm').submit((e) => {
             e.preventDefault();
-
-            const baseUrl = 'https://ojo-mager-backend.herokuapp.com/api';
             const name = $('#name').val();
             const email = $('#email').val();
             const password = $('#password').val();
-            const role = 'user';
 
-            axios({
-                method: 'post',
-                url: baseUrl + '/users/auth/register',
-                data: {
-                    name,
-                    email,
-                    password,
-                    role
-                }
-            }).then(response => {
-                console.log('registernya uda sukes');
-                const user = response.data.data;
-                axios({
-                    method: 'post',
-                    url: baseUrl + '/users/verification/new',
-                    data: {
-                        user_id: user.id 
-                    }
-                }).then(response => {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil!',
-                        text: 'Selamat! kamu telah berhasil registrasi pada website OjoMager',
-                        showConfirmButton: false,
-                        timer: 1000
-                    });
+            userApi = new api.User();
 
-                    window.location.replace('/verification?user_id=' + user.id);
-                });
-                /*
-                    @TODO tambah error handling
-                */
-            });
+            handleRegistration(name, email, password);
         });
+
+        function handleRegistration(name, email, password) {
+            userApi.register(name, email, password).then(res => {
+                handleSendEmail(res.data.data.id);
+            }).catch(err => {
+                console.log(err);
+                return errorHandling(err.response);
+            });
+        }
+
+        function handleSendEmail(user_id) {
+            userApi.sendEmailVerification(user_id).then(res => {
+                sucessAlertWithTimer('Selamat! kamu telah berhasil registrasi pada website OjoMager').then(() => {
+                    window.location.replace('/verification?user_id=' + user_id);
+                });
+            }).catch(err => {
+                return errorHandling(err.response);
+            });
+        }
+
+        function errorHandling(err) {
+            const status = err.status;
+            switch(status) {
+                case 400:
+                    // @TODO add error handling
+                case 422:
+                    return validationErrorHandling(err.data.error.errors);
+                    break;
+                case 500:
+                    return unexpectedErrorAlert();
+                break;
+            }
+        }
+
+        function validationErrorHandling(errors) {
+            for (property in errors) {
+                console.log(errors[property]);
+                if (errors[property] === 'NOT_EMPTY') {
+                    return customErrorAlert('Pastikan anda telah mengisi semua inputan!');
+                } else if (errors[property] === 'NOT_EMAIL_FORMATTED') {
+                    return customErrorAlert('Email yang anda masukkan tidak sesuai!');
+                } else if (errors[property] === 'ALREADY_TAKEN') {
+                    return customErrorAlert('Email yang anda masukkan telah terdaftar!');
+                } else if (errors[property] === 'NOT_MEET_REQUIREMENT') {
+                    return customErrorAlert('Password yang anda masukkan tidak sesuai kriteria!');
+                }
+            }
+        }
     </script>
 </body>
-
 </html>

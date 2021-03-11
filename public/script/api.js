@@ -48,7 +48,14 @@ const axios = require('axios');
 
 class Base {
     constructor() {
+        axios.defaults.validateStatus = (status) => {
+
+            return status >= 200 && status < 400;
+        }
+
         this.base_url = process.env.BASE_URL || 'https://ojo-mager-backend.herokuapp.com/api/'
+        this.endpoint = '';
+        this.header = {}
         this.params = {};
         this.data = {};
     }
@@ -82,13 +89,24 @@ class Base {
     }
 
     async createRequest() {
-        return await axios({
+        const res =  await axios({
             method: this.method || 'get',
             url: this.base_url + ( this.endpoint || '' ),
             headers: this.headers || {},
             params: this.params || {},
             data: this.data || {},
         });
+
+        this.resetInput();
+
+        return res;
+    }
+
+    resetInput() {
+        this.endpoint = '';
+        this.header = {}
+        this.params = {};
+        this.data = {};
     }
 }
 
@@ -100,16 +118,38 @@ const Base = require('./Base')
 class User extends Base {
     constructor() {
         super();
+        this.feature_url = 'users'
     }
 
     async getProfile(token) {
         this.needLogin(token);
         this.setMethod('get');
-        this.setEndpoint('users/me');
+        this.setEndpoint(this.feature_url + '/me');
 
-        const response = await this.createRequest();
+        return await this.createRequest();
+    }
 
-        return response;
+    async register(name, email, password, role = 'user') {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/auth/register');
+        this.setBody({
+            name,
+            email,
+            password,
+            role
+        });
+
+        return await this.createRequest();
+    }
+
+    async sendEmailVerification(user_id) {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/verification/new');
+        this.setBody({
+            user_id
+        });
+
+        return await this.createRequest();
     }
 }
 

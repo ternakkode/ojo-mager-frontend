@@ -2,7 +2,14 @@ const axios = require('axios');
 
 class Base {
     constructor() {
+        axios.defaults.validateStatus = (status) => {
+
+            return status >= 200 && status < 400;
+        }
+
         this.base_url = process.env.BASE_URL || 'https://ojo-mager-backend.herokuapp.com/api/'
+        this.endpoint = '';
+        this.header = {}
         this.params = {};
         this.data = {};
     }
@@ -36,13 +43,24 @@ class Base {
     }
 
     async createRequest() {
-        return await axios({
+        const res =  await axios({
             method: this.method || 'get',
             url: this.base_url + ( this.endpoint || '' ),
             headers: this.headers || {},
             params: this.params || {},
             data: this.data || {},
         });
+
+        this.resetInput();
+
+        return res;
+    }
+
+    resetInput() {
+        this.endpoint = '';
+        this.header = {}
+        this.params = {};
+        this.data = {};
     }
 }
 

@@ -3,16 +3,38 @@ const Base = require('./Base')
 class User extends Base {
     constructor() {
         super();
+        this.feature_url = 'users'
     }
 
     async getProfile(token) {
         this.needLogin(token);
         this.setMethod('get');
-        this.setEndpoint('users/me');
+        this.setEndpoint(this.feature_url + '/me');
 
-        const response = await this.createRequest();
+        return await this.createRequest();
+    }
 
-        return response;
+    async register(name, email, password, role = 'user') {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/auth/register');
+        this.setBody({
+            name,
+            email,
+            password,
+            role
+        });
+
+        return await this.createRequest();
+    }
+
+    async sendEmailVerification(user_id) {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/verification/new');
+        this.setBody({
+            user_id
+        });
+
+        return await this.createRequest();
     }
 }
 
