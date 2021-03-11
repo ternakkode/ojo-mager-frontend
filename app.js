@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 
 // third pt module
@@ -25,6 +26,6 @@ app.use(artikelRoutes);
 app.use(programRoutes);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT,  () => {
+app.listen(PORT, () => {
     console.log(`sever listening to http://localhost:${PORT}`);
 });
