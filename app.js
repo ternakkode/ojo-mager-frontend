@@ -1,10 +1,9 @@
-import dotenv from 'dotenv';
-dotenv.config();
-import path from 'path';
-import express from 'express';
-import cookieParser from 'cookie-parser';
+require('dotenv').config();
+const path = require('path');
+const express = require('express');
+const cookieParser = require('cookie-parser');
 
-import usersRoutes from './routes/users.js'
+const usersRoutes = require('./routes/users');
 
 const app = express();
 
@@ -13,7 +12,7 @@ app.set('views', 'views');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(path.resolve(), 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
 app.use(usersRoutes);

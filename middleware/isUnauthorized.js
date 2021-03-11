@@ -7,4 +7,4 @@ async function isUnauthorized(req, res, next) {
     next();
 }
 
-export default isUnauthorized;
+module.exports = isUnauthorized;

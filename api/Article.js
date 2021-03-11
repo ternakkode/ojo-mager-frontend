@@ -1,9 +1,9 @@
-import Base from './Base.js'
+const Base = require('./Base');
 
 class Article extends Base {
     constructor() {
         super();
-        this.feature_url = 'users'
+        this.feature_url = 'articles'
     }
 
     async getArticles(title = null, category = null, isRandom = false, limit = null) {        
@@ -31,7 +31,7 @@ class Article extends Base {
     }
 
     async getArticle(slug) {
-        this.setEndpoint(this.feature_url + slug);
+        this.setEndpoint(this.feature_url + '/' + slug);
         this.setMethod('get');
 
         const article = await this.createRequest();
@@ -40,4 +40,4 @@ class Article extends Base {
     }
 }
 
-export default Article;
+module.exports = Article;

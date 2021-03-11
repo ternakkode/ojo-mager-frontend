@@ -1,4 +1,4 @@
-import User from '../public/api';
+const User = require('../api/User');
 
 async function isLogin(req, res, next) {
     const token = req.cookies.jwt_token;
@@ -19,4 +19,4 @@ async function isLogin(req, res, next) {
     next();
 }
 
-export default isLogin;
+module.exports = isLogin;

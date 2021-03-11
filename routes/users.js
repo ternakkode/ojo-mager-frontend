@@ -1,5 +1,4 @@
-import express from 'express';
-const usersRoute = express.Router();
+const usersRoute = require('express').Router();
 
 usersRoute.get('/register', (req, res) => {
     res.render('users/register');
@@ -26,14 +25,7 @@ usersRoute.get('/verification/process', (req, res) => {
 });
 
 usersRoute.get('/profile', async (req, res) => {
-    const token = req.cookies.jwt_token;
-    if (!token) {
-        res.redirect('/login');
-    }
-
-    const userInformation = await user.getProfile(token);
-
-    res.render('users/profile', { user: userInformation })
+    res.render('users/profile')
 });
 
-export default usersRoute;
+module.exports = usersRoute;

@@ -36,10 +36,15 @@
         <%- include('./../includes/images.ejs') %>
     </section>
     <!-- end register page -->
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/api.js"></script>
+
     <script>
+        const articles = new api.Article();
+        articles.getArticles().then(res => {
+            console.log(res);
+        });
+        
         $('#registerForm').submit((e) => {
             e.preventDefault();
 
