@@ -5,18 +5,18 @@
   "main": "app.js",
   "dependencies": {
     "axios": "^0.21.1",
-    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "sweetalert2": "^10.15.5"
+    "express": "^4.17.1"
   },
   "devDependencies": {
+    "browserify": "^17.0.0",
     "nodemon": "^2.0.7"
   },
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "browserify api/index.js --standalone api > public/script/api.js && nodemon app.js"
   },
   "repository": {
     "type": "git",

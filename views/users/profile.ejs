@@ -1,0 +1,103 @@
+<%- include('./../includes/head.ejs')%>
+<body>
+    <div class="container profile">
+        <p class="title">Edit Profile</p>
+        <p class="text-muted description">Kamu Bisa mengubah nama, email, centang untuk melanjutkan fitur subscribe</p>
+        <form id="editProfile">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" class="form-control" id="name" value="<%= user.name %>" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="password">Kata Sandi</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="email">Email </label>
+                        <input type="email" class="form-control" id="email" value="<%= user.email %>" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="confirm_password">Konfirmasi Kata Sandi</label>
+                        <input type="password" class="form-control" id="confirm_password">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="is_subscribe_newsletter" <%if (user.is_subscribe_newsletter) { %> checked <% } %>>
+                        <label class="form-check-label check-box" for="is_subscribe_newsletter">Subscribe Kalimat Motivasi</label>
+                        <small id="subscribeHelp" class="form-text text-muted label-checkbox">Kamu akan mendapatkan kalimat penyemangat dan motivasi melalui e-mail</small>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-center button-submit-wrapper">
+                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="/script/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $(document).ready(function() {
+            $('#editProfile').submit((e) => {
+                e.preventDefault();
+                
+                const baseUrl = 'https://ojo-mager-backend.herokuapp.com/api';
+                const jwt_token = getCookie('jwt_token');
+
+                const name = $('#name').val();
+                const password = $('#password').val();
+                const confirm_password = $('#confirm_password').val();
+                const is_subscribe_newsletter = $('#is_subscribe_newsletter').is(':checked');
+
+                if(password !== confirm_password) {                    
+                    return Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal',
+                        text: 'Password yang anda masukkan tidak sama!',
+                    });
+                }
+                
+                axios({
+                    method: 'put',
+                    url: baseUrl + '/users/me',
+                    data: {
+                        name,
+                        password,
+                        is_subscribe_newsletter
+                    },
+                    headers: {
+                        Authorization: 'Bearer ' + jwt_token
+                    }
+                }).then(response => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        text: 'Anda Berhasil Mengubah Profile',
+                        showConfirmButton: false,
+                        timer: 1000
+                    }).then(() => {
+                        window.location.reload();
+                    })
+                }).catch(err => {
+                    return Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal',
+                        text: 'Terjadi kegagalan ketika merubah profile anda, silahkan coba lagi nanti',
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

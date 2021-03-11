@@ -1,0 +1,65 @@
+<%- include('./../includes/head.ejs')%>
+<body>
+    <script src="/script/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        const baseUrl = 'https://ojo-mager-backend.herokuapp.com/api';
+
+        const code = getParameterByName('code');
+        if (!code) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: 'Kode yang anda masukkan tidak valid',
+                showConfirmButton: false,
+                timer: 1000
+            }).then(() => {
+                window.location.replace('/');
+            });
+        }
+
+        axios({
+            method: 'post',
+            url: baseUrl + '/users/verification/verify',
+            data: {
+                code
+            }
+        }).then(response => {
+            const token = getCookie('jwt_token');
+            if (token) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: 'Akun anda berhasil terverifikasi, anda akan diarahkan ke halaman awal',
+                    showConfirmButton: false,
+                    timer: 1000
+                }).then(() => {
+                    window.location.replace('/');
+                });
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: 'Akun anda berhasil terverifikasi, silahkan masuk ke akun anda',
+                    showConfirmButton: false,
+                    timer: 1000
+                }).then(() => {
+                    window.location.replace('/login');
+                });
+            }
+        }).catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: 'Kode yang anda masukkan tidak valid',
+                showConfirmButton: false,
+                timer: 1000
+            }).then(() => {
+                window.location.replace('/');
+            });
+        });
+    </script>
+</body>
+
+</html>
