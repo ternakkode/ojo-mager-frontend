@@ -1,9 +1,21 @@
 // ini untuk list artikel
 .artikel{
+    font-family: 'Nunito Sans', sans-serif;
     margin: 20px 0 40px 0;
-
+    
+    
     .row{
         row-gap: 20px;
         margin-bottom: 30px;
     }
+    .dropdown{
+        margin-bottom: 50px;
+    }
+    #tombolartikel{
+        border-radius: 5px;
+    }
+    .pagination{
+        text-align: center;
+    }
+    
 }
