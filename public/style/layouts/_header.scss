@@ -1,5 +1,6 @@
 // untuk header
 header {
+    margin-bottom: 56px;
     .navbar{
         .btn{
             border-radius: 5px;
@@ -10,7 +11,7 @@ header {
             font-size: 16px;
         }
         .nav-link{
-            margin-right: 30px;
+            margin: 0 15px;
             position: relative;
         }
         .nav-link:hover::after{

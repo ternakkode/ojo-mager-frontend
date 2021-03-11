@@ -20,11 +20,13 @@ app.use(cookieParser());
 const loginRoutes = require('./routes/login');
 const registrasiRoutes = require('./routes/register');
 const artikelRoutes = require('./routes/artikel');
+const programRoutes = require('./routes/programLatihan');
 
 
 app.use(loginRoutes);
 app.use(registrasiRoutes);
 app.use(artikelRoutes);
+app.use(programRoutes);
 
 
 const port = process.env.PORT || 3005;
