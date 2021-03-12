@@ -1,10 +1,10 @@
-function sucessAlertWithTimer(message, redirectUrl) {
+function successAlertWithTimer(message) {
     return Swal.fire({
         icon: 'success',
         title: 'Berhasil',
         text: message,
         showConfirmButton: false,
-        timer: 1000
+        timer: 3000
     });
 }
 
@@ -38,6 +38,6 @@ function customErrorAlertWithTimer(message) {
         title: 'Gagal',
         text: message,
         showConfirmButton: false,
-        timer: 1000
+        timer: 3000
     });
 }

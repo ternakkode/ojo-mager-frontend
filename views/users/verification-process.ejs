@@ -13,18 +13,18 @@
     <%- include('./../includes/end.ejs') %>
     <% if (isSuccess) { %>
         <script>
-            sucessAlertWithTimer('Berhasil memverifikasi akun anda');
+            successAlertWithTimer('Berhasil memverifikasi akun anda');
             const token = getCookie('jwt_token');
             
             if (token) {
                 setTimeout(()=> {
                     window.location.replace('/');
-                }, 1000)
+                }, 3000)
+            } else {
+                setTimeout(()=> {
+                    window.location.replace('/login');
+                }, 3000)
             }
-
-            setTimeout(()=> {
-                window.location.replace('/login');
-            }, 1000)
         </script>
     <%  } else if (error == 'USER_NOT_FOUND' || error == 'CODE_NOT_FOUND') { %>
         <script>
@@ -32,7 +32,7 @@
 
             setTimeout(()=> {
                 window.location.replace('/');
-            }, 1000)
+            }, 3000)
         </script>
     <% } else if (error == 'ALREADY_VERIFIED') { %>
         <script>
@@ -40,7 +40,7 @@
 
             setTimeout(()=> {
                 window.location.replace('/');
-            }, 1000)
+            }, 3000)
         </script>
     <% } %>
 </body>
