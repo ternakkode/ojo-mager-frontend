@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../includes/head', { title: 'Registrasi' }) %>
+</head>
+
+<body>
+    <section class="register">
+        <div class="content__register">
+            <div class="formBox">
+                <h2>Daftar Akun</h2>
+                <div class="formBox__content mt-3">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama..">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password">
+                        </div>
+                        <input type="hidden" name="role" value="user">
+                        <button type="submit" class="btn btn-primary">Daftar</button>
+                    </form>
+                    <div class="loginBox mt-1">
+                        <p>Sudah Punya Akun? <a href="/login" class="text-primary">Masuk Disini</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                &copy; 2021 OjoMager, Inc All Right Reserved
+            </div>
+        </div>
+        <%- include('./../includes/images.ejs') %>
+    </section>
+
+    <%- include('./../includes/end.ejs') %>
+    <script>        
+        $('#registerForm').submit((e) => {
+            e.preventDefault();
+            const name = $('#name').val();
+            const email = $('#email').val();
+            const password = $('#password').val();
+
+            userApi = new api.User();
+
+            handleRegistration(name, email, password);
+        });
+
+        function handleRegistration(name, email, password) {
+            userApi.register(name, email, password).then(res => {
+                handleSendEmail(res.data.data.id);
+            }).catch(err => {
+                console.log(err);
+                return errorHandling(err.response);
+            });
+        }
+
+        function handleSendEmail(user_id) {
+            userApi.sendEmailVerification(user_id).then(res => {
+                sucessAlertWithTimer('Selamat! kamu telah berhasil registrasi pada website OjoMager').then(() => {
+                    window.location.replace('/verification?user_id=' + user_id);
+                });
+            }).catch(err => {
+                return errorHandling(err.response);
+            });
+        }
+
+        function errorHandling(err) {
+            const status = err.status;
+            switch(status) {
+                case 400:
+                    // @TODO add error handling
+                case 422:
+                    return validationErrorHandling(err.data.error.errors);
+                    break;
+                case 500:
+                    return unexpectedErrorAlert();
+                break;
+            }
+        }
+
+        function validationErrorHandling(errors) {
+            for (property in errors) {
+                console.log(errors[property]);
+                if (errors[property] === 'NOT_EMPTY') {
+                    return customErrorAlert('Pastikan anda telah mengisi semua inputan!');
+                } else if (errors[property] === 'NOT_EMAIL_FORMATTED') {
+                    return customErrorAlert('Email yang anda masukkan tidak sesuai!');
+                } else if (errors[property] === 'ALREADY_TAKEN') {
+                    return customErrorAlert('Email yang anda masukkan telah terdaftar!');
+                } else if (errors[property] === 'NOT_MEET_REQUIREMENT') {
+                    return customErrorAlert('Password yang anda masukkan tidak sesuai kriteria!');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
