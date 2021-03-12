@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
+const programsRoutes = require('./routes/programs');
 const usersRoutes = require('./routes/users');
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
+app.use(programsRoutes);
 app.use(usersRoutes);
 
 const PORT = process.env.PORT || 5000;
