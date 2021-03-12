@@ -1,4 +1,4 @@
-function sucessAlertWithTimer(message) {
+function sucessAlertWithTimer(message, redirectUrl) {
     return Swal.fire({
         icon: 'success',
         title: 'Berhasil',
@@ -9,11 +9,19 @@ function sucessAlertWithTimer(message) {
 }
 
 function sucessAlertWithConfirmationButton(message) {
-    
+    return Swal.fire({
+        icon: 'success',
+        title: 'Berhasil',
+        text: message,
+    });
 }
 
 function unexpectedErrorAlert() {
-
+    return Swal.fire({
+        icon: 'error',
+        title: 'Gagal',
+        text: 'Terjadi kegagalan, silahkan coba lagi nanti',
+    });
 }
 
 function customErrorAlert(message) {
@@ -21,5 +29,15 @@ function customErrorAlert(message) {
         icon: 'error',
         title: 'Gagal',
         text: message,
+    });
+}
+
+function customErrorAlertWithTimer(message) {
+    return Swal.fire({
+        icon: 'error',
+        title: 'Gagal',
+        text: message,
+        showConfirmButton: false,
+        timer: 1000
     });
 }

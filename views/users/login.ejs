@@ -1,9 +1,14 @@
-<%- include('./../includes/head.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../includes/head', { title: 'Masuk' }) %>
+</head>
+
 <body>
-    <!-- login page -->
     <section class="login">
         <div class="content__login">
-            <div class="formBox" >
+            <div class="formBox">
                 <h2>Halo! <br> Selamat Datang Kembali</h2>
                 <div class="formBox__content">
                     <form id="loginForm">
@@ -13,7 +18,8 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password">
                             <a class="text-right" href="/forgot-password">Lupa Password?</a>
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
@@ -32,25 +38,16 @@
         <%- include('./../includes/images.ejs') %>
     </section>
 
-    <script src="/script/utils.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <%- include('./../includes/end.ejs') %>
     <script>
         $('#loginForm').submit((e) => {
             e.preventDefault();
 
-            const baseUrl = 'https://ojo-mager-backend.herokuapp.com/api';
             const email = $('#email').val();
             const password = $('#password').val();
 
-            axios({
-                method: 'post',
-                url: baseUrl + '/users/auth/login',
-                data: {
-                    email,
-                    password
-                }
-            }).then(response => {
+            const userApi = new api.User();
+            userApi.login(email, password).then(response => {
                 const user = response.data.data.user;
 
                 setCookie('jwt_token', response.data.data.token, 1);
@@ -60,33 +57,19 @@
                     name: user.name,
                     is_verified: user.is_verified,
                     is_subscribe_newsletter: user.is_subscribe_newsletter
-                 }), 1)
+                }), 1);
 
-                if (user.is_verified) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil!',
-                        text: 'Selamat! kamu telah berhasil login pada website OjoMager',
-                        showConfirmButton: false,
-                        timer: 1000
-                    }).then(() => {
+                sucessAlertWithTimer('Selamat! kamu telah berhasil login pada website OjoMager');
+                setTimeout(() => {
+                    if (user.is_verified) {
                         window.location.replace('/');
-                    });
-                } else {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil!',
-                        text: 'Selamat! kamu telah berhasil login pada website OjoMager',
-                        showConfirmButton: false,
-                        timer: 1000
-                    }).then(() => {
+                    } else {
                         window.location.replace('/verification?user_id=' + user.id);
-                    });
-                }
+                    }
+                }, 1000);
+            }).catch(err => {
+                return errorHandling(err.response);
             });
-            /*
-                @TODO tambah error handling
-            */
         });
     </script>
 </body>

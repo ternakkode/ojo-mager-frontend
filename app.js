@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
+const programsRoutes = require('./routes/programs');
 const usersRoutes = require('./routes/users');
 const programRoutes = require('./routes/programLatihan');
 const errorController = require('./controllers/errorPage/errorPage');
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
+app.use(programsRoutes);
 app.use(usersRoutes);
 app.use(programRoutes);
 app.use(errorController.errorPage);

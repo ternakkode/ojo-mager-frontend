@@ -42,7 +42,10 @@
     </section>
 
     <%- include('./../includes/end.ejs') %>
-    <script>        
+    <script>
+        const articleApi = new api.Article();
+        const article = articleApi.getArticles();
+
         $('#registerForm').submit((e) => {
             e.preventDefault();
             const name = $('#name').val();
@@ -65,41 +68,13 @@
 
         function handleSendEmail(user_id) {
             userApi.sendEmailVerification(user_id).then(res => {
-                sucessAlertWithTimer('Selamat! kamu telah berhasil registrasi pada website OjoMager').then(() => {
+                sucessAlertWithTimer('Selamat! kamu telah berhasil registrasi pada website OjoMager')
+                setTimeout(() => {
                     window.location.replace('/verification?user_id=' + user_id);
-                });
+                }, 1000);
             }).catch(err => {
                 return errorHandling(err.response);
             });
-        }
-
-        function errorHandling(err) {
-            const status = err.status;
-            switch(status) {
-                case 400:
-                    // @TODO add error handling
-                case 422:
-                    return validationErrorHandling(err.data.error.errors);
-                    break;
-                case 500:
-                    return unexpectedErrorAlert();
-                break;
-            }
-        }
-
-        function validationErrorHandling(errors) {
-            for (property in errors) {
-                console.log(errors[property]);
-                if (errors[property] === 'NOT_EMPTY') {
-                    return customErrorAlert('Pastikan anda telah mengisi semua inputan!');
-                } else if (errors[property] === 'NOT_EMAIL_FORMATTED') {
-                    return customErrorAlert('Email yang anda masukkan tidak sesuai!');
-                } else if (errors[property] === 'ALREADY_TAKEN') {
-                    return customErrorAlert('Email yang anda masukkan telah terdaftar!');
-                } else if (errors[property] === 'NOT_MEET_REQUIREMENT') {
-                    return customErrorAlert('Password yang anda masukkan tidak sesuai kriteria!');
-                }
-            }
         }
     </script>
 </body>

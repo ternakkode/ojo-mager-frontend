@@ -1,30 +1,76 @@
 const usersRoute = require('express').Router();
+const User = require('../api/User');
+const isLogin = require('../middleware/isLogin');
+const isUnauthorized = require('../middleware/isUnauthorized');
+const isVerified = require('../middleware/isVerified');
 
-usersRoute.get('/register', (req, res) => {
-    res.render('users/register',{title:"Registrasi"});
+usersRoute.get('/register', isUnauthorized, async (req, res) => {
+    res.render('users/register');
 });
 
-usersRoute.get('/login', (req, res) => {
-    res.render('users/login',{title:"Login"});
+usersRoute.get('/login', isUnauthorized, async (req, res) => {
+    res.render('users/login');
 });
 
-usersRoute.get('/forgot-password', (req, res) => {
-    res.render('users/forgot-password',{title:"forgot-password"});
+usersRoute.get('/logout', async (req, res) => {
+    res.cookie('jwt_token', null, {maxAge: -1});
+    res.cookie('user', null, {maxAge: -1});
+    res.redirect('/login');
 });
 
-usersRoute.get('/forgot-password/save', (req, res) => {
-    res.render('users/save-forgot-password',{title:"save-forgot-password"});
+usersRoute.get('/forgot-password', isUnauthorized, async (req, res) => {
+    res.render('users/forgot-password');
 });
 
-usersRoute.get('/verification', (req, res) => {
-    res.render('users/verification',{title:"verification"})
+usersRoute.get('/forgot-password/save', isUnauthorized, async (req, res) => {
+    const { code } = req.query;
+
+    const userApi = new User();
+    let isSuccess = true;
+    let error = null;
+
+    if (!code) {
+        isSuccess = false;
+        error = 'CODE_NOT_FOUND';
+    } else {
+        try {
+            const verifyRequest = await userApi.verifyUser(code);
+        } catch (err) {
+            isSuccess = false;
+            error = err.response.data.error.message;
+        }
+    }
+
+    res.render('usrs/save-forgot-password', { isSuccess, error, code });
 });
 
-usersRoute.get('/verification/process', (req, res) => {
-    res.render('users/verification-process',{title:"verification-process"})
+usersRoute.get('/verification', isUnauthorized, async (req, res) => {
+    res.render('users/verification')
 });
 
-usersRoute.get('/profile', async (req, res) => {
+usersRoute.get('/verification/process', isUnauthorized, async (req, res) => {
+    const { code } = req.query;
+
+    const userApi = new User();
+    let isSuccess = true;
+    let error = null;
+
+    if (!code) {
+        isSuccess = false;
+        error = 'CODE_NOT_FOUND';
+    } else {
+        try {
+            const verifyRequest = await userApi.verifyUser(code);
+        } catch (err) {
+            isSuccess = false;
+            error = err.response.data.error.message;
+        }
+    }
+
+    res.render('users/verification-process', { isSuccess, error })
+});
+
+usersRoute.get('/profile', isLogin, isVerified, async (req, res) => {
     res.render('users/profile')
 });
 
