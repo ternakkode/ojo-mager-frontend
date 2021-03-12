@@ -33,7 +33,7 @@ function errorHandling(err) {
 
 function validationErrorHandling(errors) {
     for (property in errors) {
-        if (errors[property] === 'NOT_EMPTY') {
+        if (errors[property] === 'IS_EMPTY') {
             return customErrorAlert('Pastikan anda telah mengisi semua inputan!');
         } else if (errors[property] === 'NOT_EMAIL_FORMATTED') {
             return customErrorAlert('Email yang anda masukkan tidak sesuai!');

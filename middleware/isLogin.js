@@ -7,16 +7,16 @@ async function isLogin(req, res, next) {
     }
 
     const userApi = new User();
-    const user = await userApi.getProfile(token);
+    try {
+        const userData = await userApi.getProfile(token);
+        req.user = userData.data.data;
 
-    if (!user) {
+        next();
+    } catch (err) {
         res.cookie('jwt_token', null, {maxAge: -1});
         res.cookie('user', null, {maxAge: -1});
         res.redirect('/login');
     }
-
-    req.user = user;
-    next();
 }
 
 module.exports = isLogin;

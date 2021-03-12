@@ -55,13 +55,13 @@ class Base {
 
         this.base_url = process.env.BASE_URL || 'https://ojo-mager-backend.herokuapp.com/api/'
         this.endpoint = '';
-        this.header = {}
+        this.headers = {}
         this.params = {};
         this.data = {};
     }
 
     needLogin(token) {
-        this.header['Authorization'] = token;
+        this.headers['Authorization'] = 'Bearer ' + token;
     }
 
     setEndpoint(endpoint) {
@@ -139,6 +139,19 @@ class User extends Base {
         return await this.createRequest();
     }
 
+    async editProfile(token, name, password, is_subscribe_newsletter) {
+        this.needLogin(token);
+        this.setMethod('put');
+        this.setEndpoint(this.feature_url + '/me');
+        this.setBody({
+            name,
+            password,
+            is_subscribe_newsletter
+        });
+
+        return await this.createRequest();
+    }
+
     async register(name, email, password, role = 'user') {
         this.setMethod('post');
         this.setEndpoint(this.feature_url + '/auth/register');
@@ -167,6 +180,36 @@ class User extends Base {
         this.setEndpoint(this.feature_url + '/verification/verify');
         this.setBody({
             code
+        });
+
+        return await this.createRequest();
+    }
+
+    async forgotPasswordRequest(email) {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/forgot-password/new');
+        this.setBody({
+            email
+        })
+
+        return await this.createRequest();
+    }
+
+    async validateForgotPasswordRequest(code) {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/forgot-password/validate');
+        this.setBody({
+            code
+        });
+
+        return await this.createRequest();
+    }
+
+    async saveNewPasswordFromReset(code, password) {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/forgot-password/save');
+        this.setBody({
+            code, password
         });
 
         return await this.createRequest();
