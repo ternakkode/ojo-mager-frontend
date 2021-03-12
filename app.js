@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 
 const usersRoutes = require('./routes/users');
 const programRoutes = require('./routes/programLatihan');
+const errorController = require('./controllers/errorPage/errorPage');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 app.use(usersRoutes);
 app.use(programRoutes);
+app.use(errorController.errorPage);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
