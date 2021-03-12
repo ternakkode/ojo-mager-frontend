@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 
 const programsRoutes = require('./routes/programs');
 const usersRoutes = require('./routes/users');
-const programRoutes = require('./routes/programLatihan');
+const articlesRoute = require('./routes/articles');
 const errorController = require('./controllers/errorPage/errorPage');
 
 const app = express();
@@ -18,9 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
-app.use(programsRoutes);
 app.use(usersRoutes);
-app.use(programRoutes);
+app.use(programsRoutes);
+app.use(articlesRoute);
 app.use(errorController.errorPage);
 
 const PORT = process.env.PORT || 5000;
