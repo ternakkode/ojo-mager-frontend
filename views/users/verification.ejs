@@ -1,6 +1,11 @@
-<%- include('./../includes/head.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../includes/head', { title: 'Registrasi' }) %>
+</head>
+
 <body>
-    <!-- verification page -->
     <section class="verification">
         <div class="content__verification">
             <div class="formBox" >
@@ -22,34 +27,22 @@
         </div>
         <%- include('./../includes/images.ejs') %>
     </section>
-    <!-- end verification page -->
-    
-    <script src="/script/utils.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <%- include('./../includes/end.ejs') %>
     <script>
         const user_id = getParameterByName('user_id');
+        if (!user_id) {
+            window.location.href('/')
+        }
         
         $('#verification').click(()=> {
-            const baseUrl = 'https://ojo-mager-backend.herokuapp.com/api';
-            axios({
-                method: 'post',
-                url: baseUrl + '/users/verification/new',
-                data: {
-                    user_id
-                }
-            }).then(response => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Berhasil',
-                    text: 'Kode telah dikirim ke email anda',
-                    showConfirmButton: false,
-                    timer: 1000
-                });
+            const userApi = new api.User();
+            userApi.sendEmailVerification(user_id).then(response => {
+                sucessAlertWithConfirmationButton('Kode verifikasi baru berhasil dikirim ke email anda');
+            }).catch(err => {
+                return errorHandling(err.response);
             });
-        })
+        });
     </script>
 </body>
-
-
 </html>
