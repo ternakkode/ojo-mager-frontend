@@ -71,10 +71,10 @@
 
                 const userApi = new api.User();
                 userApi.editProfile(token, name, password, is_subscribe_newsletter).then(response => {
-                    sucessAlertWithTimer('Profile anda berhasil dirubah');
+                    successAlertWithTimer('Profile anda berhasil dirubah');
                     setTimeout(() => {
                         window.location.reload();
-                    }, 1000)
+                    }, 3000)
                 }).catch(err => {
                     errorHandling(err.response);
                 });

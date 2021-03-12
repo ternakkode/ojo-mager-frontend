@@ -35,14 +35,14 @@ usersRoute.get('/forgot-password/save', isUnauthorized, async (req, res) => {
         error = 'CODE_NOT_FOUND';
     } else {
         try {
-            const verifyRequest = await userApi.verifyUser(code);
+            const verifyRequest = await userApi.validateForgotPasswordRequest(code);
         } catch (err) {
             isSuccess = false;
             error = err.response.data.error.message;
         }
     }
 
-    res.render('usrs/save-forgot-password', { isSuccess, error, code });
+    res.render('users/save-forgot-password', { isSuccess, error, code });
 });
 
 usersRoute.get('/verification', isUnauthorized, async (req, res) => {

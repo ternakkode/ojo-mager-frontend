@@ -68,10 +68,10 @@
 
         function handleSendEmail(user_id) {
             userApi.sendEmailVerification(user_id).then(res => {
-                sucessAlertWithTimer('Selamat! kamu telah berhasil registrasi pada website OjoMager')
+                successAlertWithTimer('Selamat! kamu telah berhasil registrasi pada website OjoMager')
                 setTimeout(() => {
                     window.location.replace('/verification?user_id=' + user_id);
-                }, 1000);
+                }, 3000);
             }).catch(err => {
                 return errorHandling(err.response);
             });

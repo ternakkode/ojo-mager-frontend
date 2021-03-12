@@ -59,14 +59,14 @@
                     is_subscribe_newsletter: user.is_subscribe_newsletter
                 }), 1);
 
-                sucessAlertWithTimer('Selamat! kamu telah berhasil login pada website OjoMager');
+                successAlertWithTimer('Selamat! kamu telah berhasil login pada website OjoMager');
                 setTimeout(() => {
                     if (user.is_verified) {
                         window.location.replace('/');
                     } else {
                         window.location.replace('/verification?user_id=' + user.id);
                     }
-                }, 1000);
+                }, 3000);
             }).catch(err => {
                 return errorHandling(err.response);
             });
