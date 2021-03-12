@@ -121,6 +121,16 @@ class User extends Base {
         this.feature_url = 'users'
     }
 
+    async login(email, password) {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/auth/login');
+        this.setBody({
+            email, password
+        });
+
+        return await this.createRequest();
+    }
+
     async getProfile(token) {
         this.needLogin(token);
         this.setMethod('get');
@@ -147,6 +157,16 @@ class User extends Base {
         this.setEndpoint(this.feature_url + '/verification/new');
         this.setBody({
             user_id
+        });
+
+        return await this.createRequest();
+    }
+
+    async verifyUser(code) {
+        this.setMethod('post');
+        this.setEndpoint(this.feature_url + '/verification/verify');
+        this.setBody({
+            code
         });
 
         return await this.createRequest();
