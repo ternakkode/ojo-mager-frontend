@@ -8,19 +8,19 @@ class Article extends Base {
 
     async getArticles(title = null, category = null, isRandom = false, limit = null) {        
         if (title) {
-            this.addParams(title);
+            this.addParams('title', title);
         }
 
         if (category) {
-            this.addParams(category);
+            this.addParams('category', category);
         }
 
         if (isRandom) {
-            this.addParams(isRandom);
+            this.addParams('isRandom', isRandom);
         }
 
         if (limit) {
-            this.addParams(limit);
+            this.addParams('limit', limit);
         }
         
         this.setEndpoint(this.feature_url);

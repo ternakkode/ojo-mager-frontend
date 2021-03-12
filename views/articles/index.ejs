@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../includes/head', { title: 'Data Artikel' }) %>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main class="artikel">
+        <!-- title bar -->
+        <div class="title-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col display-3">
+                        <h2>Artikel</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- box filter and search -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter Kategori</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <% articleCategories.forEach(articleCategory => { %>
+                            <a href="?category=<%= articleCategory.name %>"
+                                class="dropdown-item"><%= articleCategory.name %></a>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="searchbar">
+                        <form id="form" method="GET">
+                            <div class="input-group mb-3">
+                                <input type="text" name="title" class="form-control"
+                                    placeholder="Artikel apa yang ingin kamu cari ?" aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button type="submit" class="input-group-text bg-primary text-white"
+                                        id="basic-addon2">Cari
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="card__contentartikel">
+            <div class="container">
+                <div class="row">
+                    <% articles.forEach(article => { %>
+                    <div class="col-md-4 col-12">
+                        <img src="<%= article.image_url %>" class="card-img-top">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-sm btn-success mb-1"
+                                id="tombolartikel"><%= article.category_name %></a>
+                            <h6 class="card-title font-weight-bold"><%= article.title %>
+                            </h6>
+                            <p class="card-text"><%= article.truncated_content %></p>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="row justify-content-center border-0">
+                <div class="col-4">
+                    <ul class="pagination">
+                        <li class="page-item disable">
+                            <a class="page-link" href="#" tabindex="-1"> Sebelumnya </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item">
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"> Selanjutnya </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../includes/footer.ejs') %>
+    <%- include('../includes/end.ejs') %>
+</body>
+
+</html
