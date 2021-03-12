@@ -1,10 +1,11 @@
+<%- include('./../includes/head.ejs')%>
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container errorPage">
+        <div class="row justify-content-center">
             <div class="col">
-                <div class="card " style="width: 23rem;">
-                    <img src="images/error-404.svg" class="gambar">
-                    <div class="card-body">
+                <div class="card">
+                    <img src="images/error404.svg" class="gambar">
+                    <div class="card-body mx-auto text-center">
                         <h5 class="card-title text-center">Aduh, konten yang kamu cari ngak ditemukan!</h5>
                         <p class="card-text text-center">Coba kamu tulis kata kunci yang sesuai ya.</p>
                         <a href="#" class="btn btn-primary">Kembali ke halaman</a>
@@ -13,4 +14,6 @@
             </div>
         </div>
     </div>
+
+    <%- include('./../includes/end.ejs')%>
 </body>

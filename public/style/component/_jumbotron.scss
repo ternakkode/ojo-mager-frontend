@@ -2,6 +2,7 @@
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 0 !important;
+    background: $Color6;
 
     .container-fluid{
         padding: 0;
@@ -28,7 +29,7 @@
                     }
     
                     .info__video--content{
-                        font-weight: 400;
+                        font-weight: lighter;
                         font-size: 16px;
                     }
     
@@ -41,6 +42,7 @@
 
                         svg{
                             margin-right: 20px;
+                            filter: invert(1);
                         }
                     }
                 }
