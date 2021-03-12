@@ -9,13 +9,13 @@ class Base {
 
         this.base_url = process.env.BASE_URL || 'https://ojo-mager-backend.herokuapp.com/api/'
         this.endpoint = '';
-        this.header = {}
+        this.headers = {}
         this.params = {};
         this.data = {};
     }
 
     needLogin(token) {
-        this.header['Authorization'] = token;
+        this.headers['Authorization'] = 'Bearer ' + token;
     }
 
     setEndpoint(endpoint) {

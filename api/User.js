@@ -24,6 +24,19 @@ class User extends Base {
         return await this.createRequest();
     }
 
+    async editProfile(token, name, password, is_subscribe_newsletter) {
+        this.needLogin(token);
+        this.setMethod('put');
+        this.setEndpoint(this.feature_url + '/me');
+        this.setBody({
+            name,
+            password,
+            is_subscribe_newsletter
+        });
+
+        return await this.createRequest();
+    }
+
     async register(name, email, password, role = 'user') {
         this.setMethod('post');
         this.setEndpoint(this.feature_url + '/auth/register');

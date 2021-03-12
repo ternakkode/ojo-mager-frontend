@@ -1,4 +1,5 @@
 const usersRoute = require('express').Router();
+
 const User = require('../api/User');
 const isLogin = require('../middleware/isLogin');
 const isUnauthorized = require('../middleware/isUnauthorized');
@@ -13,8 +14,8 @@ usersRoute.get('/login', isUnauthorized, async (req, res) => {
 });
 
 usersRoute.get('/logout', async (req, res) => {
-    res.cookie('jwt_token', null, {maxAge: -1});
-    res.cookie('user', null, {maxAge: -1});
+    res.cookie('jwt_token', null, { maxAge: -1 });
+    res.cookie('user', null, { maxAge: -1 });
     res.redirect('/login');
 });
 
@@ -71,7 +72,7 @@ usersRoute.get('/verification/process', isUnauthorized, async (req, res) => {
 });
 
 usersRoute.get('/profile', isLogin, isVerified, async (req, res) => {
-    res.render('users/profile')
+    res.render('users/profile', { user: req.user })
 });
 
 module.exports = usersRoute;
