@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -383,6 +384,10 @@ footer p.end::before {
   margin: 20px 0 40px 0;
 }
 
+.artikel h2 {
+  font-weight: 700;
+}
+
 .artikel .row {
   row-gap: 20px;
   margin-bottom: 30px;
@@ -392,12 +397,88 @@ footer p.end::before {
   margin-bottom: 50px;
 }
 
+.artikel .dropdown .btn-primary {
+  background-color: #42A5F5;
+  border-color: #42A5F5;
+}
+
+.artikel .dropdown .dropdown-item:hover {
+  background-color: #42A5F5;
+  color: white;
+}
+
+.artikel .searchbar .bg-primary {
+  background-color: #42A5F5 !important;
+  border-color: #42A5F5 !important;
+}
+
+.artikel .searchbar svg {
+  margin-left: 13px;
+}
+
+.artikel .searchbar button {
+  padding-left: 13px;
+  padding-right: 19px;
+}
+
 .artikel #tombolartikel {
   border-radius: 5px;
 }
 
 .artikel .pagination {
   text-align: center;
+}
+
+.artikel .card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.artikel .card {
+  border-radius: 8px;
+  border: none;
+}
+
+.artikel .card-body {
+  padding-top: 18px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  padding-left: 24px;
+  min-height: 310px;
+}
+
+.artikel .card-body .btn-success {
+  background-color: #00B292;
+  border-color: #00B292;
+}
+
+.artikel .card-body #tombolartikel {
+  font-weight: 600;
+  padding: 2px 8px;
+  font-size: 16px;
+  margin-bottom: 8px !important;
+}
+
+.artikel .card-body h6 {
+  font-size: 20px;
+}
+
+.artikel .card-body p {
+  color: #757575;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.artikel .card__contentartikel .col-md-4 {
+  padding: 0px 20px;
+}
+
+.artikel .card__contentartikel a {
+  text-decoration: none;
+}
+
+.artikel .card__contentartikel a h6 {
+  color: #212121;
 }
 
 .errorPage .gambar {

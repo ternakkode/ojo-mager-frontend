@@ -8,101 +8,118 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
 
-    <main class="artikel">
-        <!-- title bar -->
-        <div class="title-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col display-3">
-                        <h2>Artikel</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- box filter and search -->
-
-        <div class="container">
-            <div class="row">
-                <div class="col-3">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filter Kategori</button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <% articleCategories.forEach(articleCategory => { %>
-                            <a href="?category=<%= articleCategory.name %>"
-                                class="dropdown-item"><%= articleCategory.name %></a>
-                            <% }); %>
+        <main class="artikel">
+            <!-- title bar -->
+            <div class="title-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col display-3">
+                            <h2>Artikel</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="searchbar">
-                        <form id="form" method="GET">
-                            <div class="input-group mb-3">
-                                <input type="text" name="title" class="form-control"
-                                    placeholder="Artikel apa yang ingin kamu cari ?" aria-label="Recipient's username"
-                                    aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button type="submit" class="input-group-text bg-primary text-white"
-                                        id="basic-addon2">Cari
-                                    </button>
-                                </div>
+            </div>
+
+            <!-- box filter and search -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filter Kategori</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <% articleCategories.forEach(articleCategory=> { %>
+                                    <a href="?category=<%= articleCategory.name %>" class="dropdown-item">
+                                        <%= articleCategory.name %>
+                                    </a>
+                                    <% }); %>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div class="card__contentartikel">
-            <div class="container">
-                <div class="row">
-                    <% articles.forEach(article => { %>
-                    <div class="col-md-4 col-12">
-                        <img src="<%= article.image_url %>" class="card-img-top">
-                        <div class="card-body">
-                            <a href="#" class="btn btn-sm btn-success mb-1"
-                                id="tombolartikel"><%= article.category_name %></a>
-                            <h6 class="card-title font-weight-bold"><%= article.title %>
-                            </h6>
-                            <p class="card-text"><%= article.truncated_content %></p>
                         </div>
                     </div>
-                    <% }) %>
+                    <div class="col-6">
+                        <div class="searchbar">
+                            <form id="form" method="GET">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="title" class="form-control"
+                                        placeholder="Artikel apa yang ingin kamu cari ?"
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn input-group-text bg-primary text-white"
+                                            id="basic-addon2">Cari
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11.6256 0.493744C7.38266 0.493744 3.94538 3.9327 3.94538 8.17374C3.94318 9.57091 4.32402 10.942 5.0465 12.1378L1.3229 15.8614L1.33586 15.8744C0.938416 16.2548 0.694336 16.7948 0.694336 17.4051C0.694096 18.5842 1.63346 19.5063 2.81138 19.5061C3.41306 19.5058 3.95114 19.2651 4.33514 18.8734L4.3445 18.8828L8.18642 15.0406C9.25361 15.5765 10.4315 15.8549 11.6256 15.8537C15.8688 15.8537 19.3054 12.4153 19.3054 8.17374C19.3054 3.9327 15.8686 0.493744 11.6256 0.493744ZM11.6722 12.8338C9.02018 12.8338 6.87194 10.6849 6.87194 8.03382C6.87194 5.38326 9.02018 3.23382 11.6722 3.23382C14.3242 3.23382 16.4719 5.38302 16.4719 8.03382C16.4722 10.6849 14.3242 12.8338 11.6722 12.8338Z"
+                                                    fill="#FAFAFA" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
 
-        <div class="">
-            <div class="row justify-content-center border-0">
-                <div class="col-4">
-                    <ul class="pagination">
-                        <li class="page-item disable">
-                            <a class="page-link" href="#" tabindex="-1"> Sebelumnya </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item">
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"> Selanjutnya </a>
-                        </li>
-                    </ul>
+            <div class="card__contentartikel">
+                <div class="container">
+                    <div class="row">
+                        <% articles.forEach(article=> { %>
+                            <div class="col-md-4 col-12">
+                                <a href="">
+                                    <div class="card shadow-sm">
+                                        <img src="<%= article.image_url %>" class="card-img-top">
+                                        <div class="card-body">
+                                            <span href="" class="btn btn-sm btn-success mb-1" id="tombolartikel">
+                                                <%= article.category_name %>
+                                            </span>
+                                            <h6 class="card-title font-weight-bold">
+                                                <%= article.title %>
+                                            </h6>
+                                            <p class="card-text">
+                                                <%= article.truncated_content %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <% }) %>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <%- include('../includes/footer.ejs') %>
-    <%- include('../includes/end.ejs') %>
+            <div class="">
+                <div class="row justify-content-center border-0">
+                    <div class="container">
+                        <div class="col-5 mx-auto">
+                            <ul class="pagination">
+                                <li class="page-item disable">
+                                    <a class="page-link" href="#" tabindex="-1"> Sebelumnya </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item">
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"> Selanjutnya </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <%- include('../includes/footer.ejs') %>
+            <%- include('../includes/end.ejs') %>
 </body>
 
 </html
