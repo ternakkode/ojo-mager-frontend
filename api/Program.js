@@ -29,7 +29,8 @@ class Program extends Base {
         return await this.createRequest();
     }
 
-    async getProgram(slug) {
+    async getProgram(token, slug) {
+        this.needLogin(token)
         this.setEndpoint(this.feature_url + '/' + slug);
         this.setMethod('get');
 
