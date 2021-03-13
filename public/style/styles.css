@@ -142,6 +142,7 @@ header .navbar .nav-link {
   position: relative;
   font-size: 12px;
   font-family: 'Nunito Sans', sans-serif;
+  color: black;
 }
 
 header .navbar .nav-link:hover::after {
