@@ -2,20 +2,36 @@ footer {
     background-color: #202432;
     font-family: 'Nunito Sans', sans-serif;
     width:auto;
+    padding-top: 30px;
+    p.tagline{
+        font-size: 12px;
+    }
+    a.link-footer{
+        text-decoration: none;
+        font-size: 10px;
+        color: white;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+    p.kanan{
+        margin-bottom: 10px;
+
+    }
     p.end{
         font-family: 'Nunito Sans', sans-serif;
+        font-size: 12px;
         text-align: center;
         background-color:#202432;
         padding: 0;
         margin: 0;
-
+    
         &::before{
             content: "";
             display:block;
-            width: 90%;
+            width: 100%;
             border-top: 1px solid white;
             margin: auto;
             margin-bottom: 13px;
-        }
+            margin-top: 60px;
     }
+}
 }
