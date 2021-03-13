@@ -1,30 +1,33 @@
 // untuk header
 header {
-    .navbar{
+    .navbar {
         padding-top: 15px;
         padding-bottom: 15px;
         background-color: white;
-        box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 
-        .btn{
+        .btn {
             border-radius: 5px;
             font-family: 'Nunito Sans', sans-serif;
             font-size: 12px;
             padding-left: 20px;
             padding-right: 20px;
         }
-        .navbar-nav{
-            font-family:'Nunito Sans';
+
+        .navbar-nav {
+            font-family: 'Nunito Sans', sans-serif;
             font-size: 12px;
         }
-        .nav-link{
+
+        .nav-link {
             margin-right: 20px;
             position: relative;
             font-size: 12px;
             font-family: 'Nunito Sans', sans-serif;
             color: black;
         }
-        .nav-link:hover::after{
+
+        .nav-link:hover::after {
             content: "";
             display: block;
             margin: auto;
@@ -32,13 +35,24 @@ header {
             margin-bottom: -8px;
             border-bottom: 3px solid #0B63DC;
         }
-        .gambar{
-            width:80%;
-            height:80%;
+
+        .gambar {
+            width: 80%;
+            height: 80%;
             padding: 0;
         }
-        .dropdown{
+
+        .dropdown {
             margin-right: 30px;
+        }
+
+        .dropdown-item {
+            font-size: 12px !important;
+            font-family: 'Nunito Sans', sans-serif !important;
+        }
+
+        .logout {
+            color: red;
         }
     }
 }
