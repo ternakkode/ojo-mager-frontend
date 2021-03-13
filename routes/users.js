@@ -16,7 +16,7 @@ usersRoute.get('/login', isUnauthorized, async (req, res) => {
 usersRoute.get('/logout', async (req, res) => {
     res.cookie('jwt_token', null, { maxAge: -1 });
     res.cookie('user', null, { maxAge: -1 });
-    res.redirect('/login');
+    return res.redirect('/login');
 });
 
 usersRoute.get('/forgot-password', isUnauthorized, async (req, res) => {
