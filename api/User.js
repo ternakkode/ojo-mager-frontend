@@ -99,6 +99,22 @@ class User extends Base {
 
         return await this.createRequest();
     }
+
+    async addFavoritesProgram(token, program_id) {
+        this.setMethod('post');
+        this.needLogin(token);
+        this.setEndpoint(this.feature_url + '/favorites-programs/' + program_id);
+
+        return await this.createRequest();
+    }
+
+    async deleteFavoritesProgram(token, program_id) {
+        this.setMethod('delete');
+        this.needLogin(token);
+        this.setEndpoint(this.feature_url + '/favorites-programs/' + program_id);
+        
+        return await this.createRequest();
+    }
 }
 
 module.exports = User;
