@@ -23,7 +23,7 @@ app.use(programsRoutes);
 app.use(articlesRoute);
 app.use(errorController.errorPage);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
     console.log(`sever listening to http://localhost:${PORT}`);
 });
