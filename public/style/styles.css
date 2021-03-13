@@ -138,7 +138,7 @@ header .navbar .btn {
 }
 
 header .navbar .navbar-nav {
-  font-family: 'Nunito Sans';
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 12px;
 }
 
@@ -167,6 +167,15 @@ header .navbar .gambar {
 
 header .navbar .dropdown {
   margin-right: 30px;
+}
+
+header .navbar .dropdown-item {
+  font-size: 12px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+header .navbar .logout {
+  color: red;
 }
 
 footer {
