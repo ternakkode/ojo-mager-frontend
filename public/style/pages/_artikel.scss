@@ -2,7 +2,9 @@
 .artikel{
     font-family: 'Nunito Sans', sans-serif;
     margin: 20px 0 40px 0;
-    
+    h2{
+        font-weight: 700;
+    }
     
     .row{
         row-gap: 20px;
@@ -10,6 +12,27 @@
     }
     .dropdown{
         margin-bottom: 50px;
+        .btn-primary{
+            background-color: #42A5F5;
+            border-color: #42A5F5;
+        }
+        .dropdown-item:hover{
+            background-color: #42A5F5;
+            color: white;
+        }
+    }
+    .searchbar{
+        .bg-primary{
+            background-color: #42A5F5 !important;
+            border-color: #42A5F5 !important;
+        }
+        svg{
+            margin-left: 13px;
+        }
+        button{
+            padding-left: 13px;
+            padding-right: 19px;
+        }
     }
     #tombolartikel{
         border-radius: 5px;
@@ -17,5 +40,49 @@
     .pagination{
         text-align: center;
     }
-    
+    .card-img-top{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .card{
+        border-radius: 8px;
+        border: none;
+    }
+    .card-body{
+        padding-top: 18px;
+        padding-bottom: 16px;
+        padding-right: 24px;
+        padding-left: 24px;
+        min-height: 310px;
+        .btn-success{
+            background-color:#00B292;
+            border-color: #00B292;
+        }
+        #tombolartikel{
+            font-weight: 600;
+            padding: 2px 8px;
+            font-size: 16px;
+            margin-bottom: 8px !important;
+        }
+        h6{
+            font-size: 20px;
+        }
+        p{
+            color:#757575;
+            font-size: 20px;
+            line-height: 27px;
+        }
+    }
+    .card__contentartikel{
+        .col-md-4{
+            padding: 0px 20px;
+        }
+        a{
+            text-decoration: none;
+            h6{
+                color: #212121;
+            }
+        }
+    }
 }
+
