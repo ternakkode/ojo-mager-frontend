@@ -3,8 +3,10 @@ const Program = require('../api/Program');
 const ProgramType = require('../api/ProgramType');
 const timeUtils = require('../utils/time');
 const stringUtils = require('../utils/string');
+const isLogin = require('../middleware/isLogin');
+const isVerified = require('../middleware/isVerified');
 
-programsRoute.get('/programs', async (req, res) => {
+programsRoute.get('/program', isLogin, isVerified, async (req, res) => {
     const { title, type } = req.query;
 
     const programApi = new Program();
@@ -31,7 +33,7 @@ programsRoute.get('/programs', async (req, res) => {
     });
 });
 
-programsRoute.get('/program/:slug', async (req, res) => {
+programsRoute.get('/program/:slug', isLogin, isVerified, async (req, res) => {
     const { slug } = req.params;
     const token = req.cookies.jwt_token;
 

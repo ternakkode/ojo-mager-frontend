@@ -52,7 +52,6 @@
 
                 setCookie('jwt_token', response.data.data.token, 1);
                 setCookie('user', JSON.stringify({
-                    id: user.id,
                     email: user.email,
                     name: user.name,
                     is_verified: user.is_verified,

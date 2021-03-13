@@ -2,12 +2,11 @@ const usersRoute = require('express').Router();
 
 const timeUtils = require('../utils/time');
 const stringUtils = require('../utils/string');
-const Program = require('../api/Program');
 const ProgramType = require('../api/ProgramType');
 const User = require('../api/User');
 const isLogin = require('../middleware/isLogin');
-const isUnauthorized = require('../middleware/isUnauthorized');
 const isVerified = require('../middleware/isVerified');
+const isUnauthorized = require('../middleware/isUnauthorized');
 
 usersRoute.get('/register', isUnauthorized, async (req, res) => {
     res.render('users/register');
@@ -75,7 +74,7 @@ usersRoute.get('/verification/process', isUnauthorized, async (req, res) => {
     res.render('users/verification-process', { isSuccess, error })
 });
 
-usersRoute.get('/program-favorites', async (req, res) =>{
+usersRoute.get('/program-favorite', isLogin, isVerified, async (req, res) =>{
     const { title, type } = req.query;
     const token = req.cookies.jwt_token;
 

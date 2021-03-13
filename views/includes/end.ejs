@@ -14,3 +14,30 @@
 <script src="/script/alert.js"></script>
 <script src="/script/utils.js"></script>
 <script src="/script/error.js"></script>
+
+<script>
+    const token = getCookie('jwt_token');
+    const profileSection = $('#profileSection');
+    if (token) {
+        const user = JSON.parse(getCookie('user'));
+        const name = user.name.split(' ');
+        profileSection.html(`
+        <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Hallo, ${name[0]}</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <a href="/profile"><button class="dropdown-item" type="button"><i class="far fa-user-circle mr-2"></i>Profil</button></a>
+                    <a href="/program-favorite"><button class="dropdown-item" type="button"><i class="far fa-heart mr-2"></i>Video Favorit</button></a>
+                    <a href="/logout"><button class="dropdown-item logout" type="button"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button></a>
+                </div>
+            </div>
+        `);
+    } else {
+        profileSection.html(
+            `
+            <a href="/login" class="btn btn-danger login-btn btn-sm mr-2">Masuk</a>
+            <a href="/register" class="btn btn-primary btn-sm">Daftar</a>
+            `
+        );
+    }
+</script>

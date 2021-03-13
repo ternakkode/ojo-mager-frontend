@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <%- include('../includes/head', { title: 'Data Artikel' }) %>
+    <%- include('../includes/head', { title: 'Detail Artikel' }) %>
 </head>
 
 <body>
-    <main class="detailArticle mt-5">
-        <!-- article -->
-        <div class="container article">
+    <%- include('../includes/navigation' %>
+
+    <main class="detailArticle">
+        <div class="container article pt-3">
             <div class="row">
                 <div class="col-md-8 pl-5">
                     <h5 class="btn btn-sm btn-primary"
@@ -16,9 +17,8 @@
                         <%= article.category_name %></h5>
                     <h2 class="font-weight-bold"> <%= article.title %></h5>
                     </h2>
-                    <h6 class="text-muted"> Oleh:<%= article.publisher_name %> • <%= article.published_at%></h5>
+                    <h6 class="text-muted"> Oleh : <%= article.publisher_name %> • <%= article.published_at%></h5>
                     </h6>
-                    <a href="#"> Bagikan Artikel Ini</a>
                     <% 
                     const paragraphs = article.content.split('\n\n');
                     paragraphs.forEach(paragraph => { %>
@@ -37,7 +37,7 @@
                                 <p class="lainnya mt-5">Artikel lainnya </p>
                             </div>
                             <div class="col mt-5">
-                                <a class="link" href="/articles"> Lihat semua -></a>
+                                <a class="link" href="/article"> Lihat semua -></a>
                             </div>
                         </div>
                         <% randomArticles.forEach(article => { %>
