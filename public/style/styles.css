@@ -117,6 +117,10 @@ html {
           filter: invert(1);
 }
 
+header {
+  margin-bottom: 72px;
+}
+
 header .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -134,7 +138,7 @@ header .navbar .btn {
 }
 
 header .navbar .navbar-nav {
-  font-family: 'Nunito Sans';
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 12px;
 }
 
@@ -163,6 +167,15 @@ header .navbar .gambar {
 
 header .navbar .dropdown {
   margin-right: 30px;
+}
+
+header .navbar .dropdown-item {
+  font-size: 12px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+header .navbar .logout {
+  color: red;
 }
 
 footer {
@@ -387,6 +400,7 @@ footer p.end::before {
 .landingPage .card__content p {
   font-family: 'Lato';
   font-size: 18px;
+  color: #000000;
 }
 
 .landingPage .card__content .card-body {
@@ -430,6 +444,7 @@ footer p.end::before {
 }
 
 .landingPage .card__content .card-title.kataPakar {
+  background-color: #000000;
   margin-right: 1rem;
   padding: 2px 8px;
   border-radius: 4px;
@@ -558,6 +573,7 @@ footer p.end::before {
 
 .landingPage .our-team .jumbotron .container p {
   font-size: 20px;
+  color: #000000;
 }
 
 .landingPage .our-team .jumbotron .container .swiper-container {
@@ -601,6 +617,7 @@ footer p.end::before {
 .detailArticle .card__content p {
   font-family: 'Lato';
   font-size: 18px;
+  color: #000000;
 }
 
 .detailArticle .card__content .card-body {
@@ -644,6 +661,7 @@ footer p.end::before {
 }
 
 .detailArticle .card__content .card-title.kataPakar {
+  background-color: #000000;
   margin-right: 1rem;
   padding: 2px 8px;
   border-radius: 4px;
@@ -796,6 +814,14 @@ footer p.end::before {
   color: #212121;
 }
 
+.detail__olahraga .info__video--content p {
+  margin-bottom: 0;
+}
+
+.detail__olahraga .info__video--description p {
+  color: #BDBDBD;
+}
+
 .detail__olahraga .thumbnail__donasi .container {
   background: #263238;
   border-radius: 12px;
@@ -821,7 +847,6 @@ footer p.end::before {
 }
 
 .detail__olahraga .swiper-slide .card {
-  text-align: center;
   border-radius: 12px;
   border: 2px solid rgba(0, 0, 0, 0.2);
 }
