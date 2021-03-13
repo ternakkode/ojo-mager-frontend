@@ -1,13 +1,22 @@
 // ini untuk detail artikel
 
 .detailArticle {
+    
+    .article {
+
+        .row {
+
+            .col-md-8 {
+                
+
+            }
+        }
+    }
 
     .card__content {
-
         
 
         p { 
-            font-family: 'Lato';
             font-size: 18px;
             color: $Color8;
             
@@ -19,7 +28,7 @@
 
         .card-body {
             max-height: 500px;
-            font-family: 'NunitoSans';
+            // font-family: 'Nunito Sans';
             font-size: 20px;
             
         }
