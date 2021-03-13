@@ -2,8 +2,9 @@
 <header>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <class class="navbar-brand" href="/">
-                <img class="gambar" src="/images/logo.svg"></class>
+            <a href="/" class="navbar-brand">
+                <img class="gambar" src="/images/logo.svg">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -11,22 +12,14 @@
             <div class="collapse navbar-collapse font-weight-bold" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/articles">Artikel<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/article">Artikel<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/programs">Video Olahraga</a>
+                        <a class="nav-link" href="/program">Video Olahraga</a>
                     </li>
                 </ul>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Hallo, nama</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <a href="/profile"><button class="dropdown-item" type="button"><i class="far fa-user-circle mr-2"></i>Profil</button></a>
-                    <a href="#"><button class="dropdown-item" type="button"><i class="far fa-heart mr-2"></i>Video Favorit</button></a>
-                    <a href="/logout"><button class="dropdown-item logout" type="button"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button></a>
-                </div>
-            </div>
+            <div id="profileSection"></div>
         </div>
         </div>
     </nav>

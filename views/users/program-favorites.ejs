@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('../includes/head', { title: 'Program Favorites' }) %>
+    <%- include('../includes/head', { title: 'Program Favorit' }) %>
 </head>
 
 <body>
@@ -69,7 +69,7 @@
                     <div class="row">
                         <% programFavorites.forEach(programFavorite=> { %>
                             <div class="col-md-4 col-12">
-                                <a href="/programs/<%= programFavorite.slug %>" style="text-decoration: none; color: inherit;">
+                                <a href="/program/<%= programFavorite.slug %>" style="text-decoration: none; color: inherit;">
                                 <div class="card shadow-sm">
                                     <img class="card-img-top" src="<%= programFavorite.image_url %>" alt="Card image cap">
                                     <div class="card-body">

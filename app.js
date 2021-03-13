@@ -18,6 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
+app.use('/', (req, res) => {
+    res.render('index')
+})
 app.use(usersRoutes);
 app.use(programsRoutes);
 app.use(articlesRoute);
