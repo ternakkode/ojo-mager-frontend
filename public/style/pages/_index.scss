@@ -1,0 +1,293 @@
+// ini untuk index
+
+.landingPage { 
+    
+    .top__wrapper{
+        
+        .jumbotron { 
+        height: 492px;
+        background-image: url("../images/portrait-couple-doing-exercise-together-watching-video-tutorial-laptop-while-staying-home-sport-concept-new-normal-lifestyle-freepik.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        // width: 100%;
+        background-size: cover;
+        position: relative;
+
+            .container {
+                position: absolute;
+                top: 30%;
+                left: 10%;
+                text-align: justify;
+                color: $Color3;
+
+                .display-4{
+                    font-family:'Lato';
+                    font-style: normal;
+                    font-weight: bold;
+                    // -webkit-backdrop-filter: blur(4px);
+                    // backdrop-filter: blur(4px);
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+    
+    .card__content {
+        
+        .landing__program {
+
+            h2 {
+                margin-top: 40px;
+                margin-bottom: 13px;
+                font-family: "NunitoSans";
+                font-size: 36px;
+                font-weight: bold;
+            }
+        }
+
+        .landing__article {
+
+            h2 {
+                margin-top: 40px;
+                margin-bottom: 13px;
+                font-family: "NunitoSans";
+                font-size: 36px;
+                font-weight: bold;
+            }
+        }
+
+
+        p { 
+            font-family: 'Lato';
+            font-size: 18px;
+            color: $Color8;
+        }
+
+        // .row {
+        //      margin-top: -20px;
+        // }
+
+        .card-body {
+            max-height: 500px;
+            font-family: 'NunitoSans';
+            font-size: 20px;
+        }
+
+        a {
+            text-align: right;
+        }
+
+        .card {
+            box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(28, 5, 77, 0.1);
+        }
+        .card-img-top{
+            height: 350px;
+        }
+        
+        .card__header{
+            display: flex;
+            justify-content: flex-start;
+            
+            p {
+                margin-left: 15px;
+            }
+        }
+        
+        .card-title {
+            background-color: $Color6;
+            margin-right: 1rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: $Color3;
+
+        }
+
+        .card-title.kataPakar {
+            background-color: $Color7;
+            margin-right: 1rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .card-title.nutrisi {
+            background-color: $Color5;
+            margin-right: 1rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    }
+    
+    .mid__wrapper{
+        
+        .jumbotron { 
+        height: 460px;
+        background-color: $Color4;
+        background-position: center center;
+        background-repeat: no-repeat;
+        // width: 100%;
+        background-size: cover;
+        position: relative;
+
+            .container {
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                text-align: justify;
+                color : $Color3;
+                font-family: 'NunitoSans';
+                
+                h1 { 
+                    text-align: center;
+                    font-size: 36px;
+
+                    .display-4{
+                        font-size: 20px;
+                    }
+                }
+
+                .col-4 {
+                    h1 {
+                        font-size: 60px;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        text-align: center;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        gap: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .our-services{
+        
+        .jumbotron { 
+        height: 496px;
+        background-color: $Color3;
+        background-position: center center;
+        background-repeat: no-repeat;
+        // width: 100%;
+        background-size: cover;
+        position: relative;
+
+            .container {
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                text-align: justify;
+                color : $Color2;
+                font-family: "NunitoSans";
+
+                .display-4 {
+                    font-size: 36px;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    text-align: center;
+                }
+
+                .display-4 span {
+                    color: $Color4;
+                    font-size: 20px;
+                }
+
+                h1 { 
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .our-team{
+        
+        .jumbotron { 
+        height: 800px;
+        background-color: $Color3;
+        background-position: center center;
+        background-repeat: no-repeat;
+        // width: 100%;
+        background-size: cover;
+        position: relative;
+
+            .container {
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                text-align: justify;
+                color: $Color2;
+                font-family: "NunitoSans";
+
+                .display-4 { 
+                    text-align: center;
+                    font-size: 40px;
+                    
+                    span {
+                        font-size: 20px;
+                        color: $Color4;
+                        
+                    }
+                }
+                
+                p {
+                    font-size: 20px;
+                    color: $Color8;
+                }
+
+                .swiper-container {
+                    width: 300px;
+                    // height: 300px;
+                  }
+              
+                  .swiper-slide {
+                    background-position: center;
+                    background-size: cover;
+                  }
+            }
+        }
+    }
+
+    .btm__wrapper{
+        
+        .jumbotron { 
+        height: 121px;
+        background-color: $Color4;
+        background-position: center center;
+        background-repeat: no-repeat;
+        // width: 100%;
+        background-size: cover;
+        position: relative;
+
+            .container {
+                position: absolute;
+                top: 30%;
+                left: 10%;
+                text-align: justify;
+                color : $Color3;
+                font-family: "NunitoSans";
+
+                p {
+                    line-height: 1.5;
+                    letter-spacing: 1px;
+                    text-align: left;
+                    font-size: 20px;
+                }
+
+                a {
+                    color: $Color4;
+                }
+
+            }
+        }
+    } 
+}

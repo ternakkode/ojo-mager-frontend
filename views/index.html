@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OjoMager</title>
     <!-- style own -->
-    <link rel="stylesheet" href="./../assets/style/styles.css">
+    <link rel="stylesheet" href="./../public/style/styles.css">
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- boostrap -->
-    <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!-- Link Swiper's CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
-
 <body>
 
     <!-- struktur file header -->
@@ -22,8 +25,7 @@
                 <a class="navbar__icon">
                     <img src="">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse mr-auto" id="navbarNavAltMarkup">
@@ -34,20 +36,8 @@
                         <a class="nav-item nav-link" href="#">Tentang Kami</a>
                     </div>
                 </div>
-                <div class="my-0">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" id="profile" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Profil Saya
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="profile">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="my-0 navbar-nav">
+                    <a href="#" class="nav-item nav-link">Profil Saya</a>
                 </div>
             </div>
         </nav>
@@ -55,8 +45,256 @@
     <!-- end header -->
 
     <!-- main content diisi disini ya-->
-    <main style="height: 1000px;">
+    <main class="landingPage">  
+        <!-- Top Wrap -->
+        <div class="top__wrapper">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-4">  Konten olahraga rumahan.<br>
+                                            Untuk kamu yang beraktivitas di rumah.</h1>
+                </div>     
+            </div>
+        </div>  
+        <!-- Card Content  -->
+        <div class="card__content">
+            <!-- Ini Card Program Latihan -->
+            <div class="container">
+                <div class="landing__program">
+                    <h2>Masih bingung mau mulai dari mana?</h2>
+                    <div class="row justify-content-between">
+                        <div class="col-17 col-md-8">
+                            <p>Ada program olahraga yang bisa kamu coba dulu nih!</p>
+                        </div>
+                        <div class="col-1 col-md-2">
+                            <a href="#">Lihat semua →</a>
+                        </div>
+                    </div>
+                <div class="row">
+            <!-- Card Pertama  -->
+                <div class="col-md-4 col-12">
+                    <div class="card">
+                        <img class="card-img-top" src="../public/images/full-shot-woman-doing-squats 1.png" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card__header">
+                                    <h5 class="card-title">Cardio</h5>  
+                                    <p> <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.0703 0.0100098H6.07031V2.01001H12.0703V0.0100098ZM8.07031 13.01H10.0703V7.01001H8.07031V13.01ZM16.1003 6.39001L17.5203 4.97001C17.0903 4.46001 16.6203 3.98001 16.1103 3.56001L14.6903 4.98001C13.0976 3.69834 11.1146 2.9997 9.07031 3.00001C4.10031 3.00001 0.0703125 7.03001 0.0703125 12C0.0703125 16.97 4.09031 21 9.07031 21C14.0503 21 18.0703 16.97 18.0703 12C18.0703 9.89001 17.3303 7.94001 16.1003 6.39001ZM9.07031 19.01C5.20031 19.01 2.07031 15.88 2.07031 12.01C2.07031 8.14001 5.20031 5.01001 9.07031 5.01001C12.9403 5.01001 16.0703 8.14001 16.0703 12.01C16.0703 15.88 12.9403 19.01 9.07031 19.01Z" fill="#757575"/>
+                                        </svg>
+                                        30 detik </p>     
+                                </div>
+                                <h3 class="card-text">Squat</h3>
+                                <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur unde accusamus ab aliquam in pariatur velit quasi provident accusantium nihil expedita, cupiditate cumque libero praesentium, nam, architecto ex nostrum facere?</p>
+                            </div>
+                    </div>
+                </div>
+            <!-- Card Kedua  -->
+                <div class="col-md-4 col-12">
+                    <div class="card">
+                        <img class="card-img-top" src="../public/images/horizontal-view-male-athlete-dressed-activewear-has-cardio-running-up-stairs-prepares-jogging-long-distance-makes-steps-jumps-high-african-american-man-t-shirt-leggings-trainers 1.png" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card__header">
+                                    <h5 class="card-title">Cardio</h5>  
+                                    <p> <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.0703 0.0100098H6.07031V2.01001H12.0703V0.0100098ZM8.07031 13.01H10.0703V7.01001H8.07031V13.01ZM16.1003 6.39001L17.5203 4.97001C17.0903 4.46001 16.6203 3.98001 16.1103 3.56001L14.6903 4.98001C13.0976 3.69834 11.1146 2.9997 9.07031 3.00001C4.10031 3.00001 0.0703125 7.03001 0.0703125 12C0.0703125 16.97 4.09031 21 9.07031 21C14.0503 21 18.0703 16.97 18.0703 12C18.0703 9.89001 17.3303 7.94001 16.1003 6.39001ZM9.07031 19.01C5.20031 19.01 2.07031 15.88 2.07031 12.01C2.07031 8.14001 5.20031 5.01001 9.07031 5.01001C12.9403 5.01001 16.0703 8.14001 16.0703 12.01C16.0703 15.88 12.9403 19.01 9.07031 19.01Z" fill="#757575"/>
+                                        </svg>
 
+                                        45 detik </p>     
+                                </div>
+                                <h3 class="card-text">Lari di Tempat</h3>
+                                <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur unde accusamus ab aliquam in pariatur velit quasi provident accusantium nihil expedita, cupiditate cumque libero praesentium, nam, architecto ex nostrum facere?</p>
+                            </div>
+                    </div>
+                </div>
+            <!-- Card Ketiga  -->    
+                <div class="col-md-4 col-12">
+                    <div class="card">
+                        <img class="card-img-top" src="../public/images/businesswoman-relaxing-muscles-after-finishing-job 1.png" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card__header">
+                                    <h5 class="card-title kataPakar">Kata Pakar </h5>  
+                                    <p> <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.0703 0.0100098H6.07031V2.01001H12.0703V0.0100098ZM8.07031 13.01H10.0703V7.01001H8.07031V13.01ZM16.1003 6.39001L17.5203 4.97001C17.0903 4.46001 16.6203 3.98001 16.1103 3.56001L14.6903 4.98001C13.0976 3.69834 11.1146 2.9997 9.07031 3.00001C4.10031 3.00001 0.0703125 7.03001 0.0703125 12C0.0703125 16.97 4.09031 21 9.07031 21C14.0503 21 18.0703 16.97 18.0703 12C18.0703 9.89001 17.3303 7.94001 16.1003 6.39001ZM9.07031 19.01C5.20031 19.01 2.07031 15.88 2.07031 12.01C2.07031 8.14001 5.20031 5.01001 9.07031 5.01001C12.9403 5.01001 16.0703 8.14001 16.0703 12.01C16.0703 15.88 12.9403 19.01 9.07031 19.01Z" fill="#757575"/>
+                                        </svg>
+
+                                        1 menit</p>     
+                                </div>
+                                <h3 class="card-text">Peregangan Tangan</h3>
+                                <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur unde accusamus ab aliquam in pariatur velit quasi provident accusantium nihil expedita, cupiditate cumque libero praesentium, nam, architecto ex nostrum facere?</p>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>    
+            <br><br>
+            <!-- Ini Card Artikel-->
+            <div class="container">
+                <div class="landing__article">
+                <h2>Hidup Sehat. Tetap Bugar. </h2>
+                <div class="row justify-content-between">
+                    <div class="col-17 col-md-8">
+                        <p>Dengan konten bacaan tentang olahraga dan kesehatan yang ditulis oleh para pakar</p>
+                    </div>
+                    <div class="col-1 col-md-2">
+                        <a href="#">Lihat semua →</a>
+                    </div>
+                </div>
+                    <div class="row">
+                    <!-- Card Pertama  -->    
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <img class="card-img-top" src="../public/images/a1.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="card__header">
+                                            <h5 class="card-title kataPakar">Kata Pakar</h5>  
+                                        </div>
+                                        <h3 class="card-text">Aktif Olahraga di Rumah dengan ‘Snack Exercise’</h3>
+                                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur unde accusamus ab aliquam in pariatur velit quasi provident accusantium nihil expedita, cupiditate cumque libero praesentium, nam, architecto ex nostrum facere?</p>
+                                    </div>
+                            </div>
+                        </div>
+                    <!-- Card Kedua  -->    
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <img class="card-img-top" src="../public/images/a2.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="card__header">
+                                            <h5 class="card-title nutrisi">Nutrisi</h5>   
+                                        </div>
+                                        <h3 class="card-text">Resep Makanan Berenergi Saat di Rumah</h3>
+                                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur unde accusamus ab aliquam in pariatur velit quasi provident accusantium nihil expedita, cupiditate cumque libero praesentium, nam, architecto ex nostrum facere?</p>
+                                    </div>
+                            </div>
+                        </div>
+                    <!-- Card Ketiga  -->
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <img class="card-img-top" src="../public/images/a1.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="card__header">
+                                            <h5 class="card-title kataPakar">Kata Pakar</h5>  
+                                        </div>
+                                        <h3 class="card-text">Aktif Olahraga di Rumah dengan ‘Snack Exercise’</h3>
+                                        <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur unde accusamus ab aliquam in pariatur velit quasi provident accusantium nihil expedita, cupiditate cumque libero praesentium, nam, architecto ex nostrum facere?</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        </div>    
+         <!-- Mid Wrap -->
+         <div class="mid__wrapper">
+            <div class="jumbotron">
+                <div class="container">
+                        <h1 class="display-4">Tentang OjoMager.
+                            <br>
+                            <br>
+                            Dibuat dari kami, untuk kamu yang sibuk dengan kegiatan di rumah dan <br> butuh konten olahraga rumahan.</h1>
+                            <br>
+                            <br>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <h1>50+</h1>
+                                <br>
+                                <p>Lebih dari 50+ konten video olahraga ditonton dalam sebulan</p>
+                            </div>
+                            <div class="col-4">
+                                <h1>100+</h1>
+                                <br>
+                                <p>Lebih dari 100 konten video olahraga gratis yang cocok untuk dilakukan dirumah</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>        
+        <!-- Our Service -->
+        <div class="our-services">
+            <div class="jumbotron">
+                <div class="container">
+                        <h1 class="display-4">  <span>LAYANAN KAMI.</span> <br><br>
+                            Menyediakan berbagai panduan <br>
+                            olahraga di rumah.</h1>
+                            <br>
+                        <div class="row justify-content-center">
+                            <img src="../public/images/card service row.png">
+                        </div>    
+                    </div>     
+                </div>
+            </div>
+        </div> 
+        <!-- Our Team -->
+        <div class="our-team">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-4">  <span>Tim Kami.</span> <br> OjoMager.</h1>
+                    <br>
+                    <div class="row justify-content-center"> <p>Dari Sabang sampai Merauke, berjajar tim kami</p> </div>
+                    <br>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="card">
+                                <img class="card-img-top" src="../public/images/a1.png" alt="Card image cap">
+                                <div class="card-body">
+                                  <h5 class="card-title">Ujang Mamang</h5>
+                                  <p class="card-text">FSW</p>
+                                </div>
+                              </div>
+                            </div>
+                          <div class="swiper-slide">
+                            <div class="card">
+                                <img class="card-img-top" src="../public/images/businesswoman-relaxing-muscles-after-finishing-job 1.png" alt="Card image cap">
+                                <div class="card-body">
+                                  <h5 class="card-title">Firhan</h5>
+                                  <p class="card-text">Tech Lead</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-img-top" src="../public/images/horizontal-view-male-athlete-dressed-activewear-has-cardio-running-up-stairs-prepares-jogging-long-distance-makes-steps-jumps-high-african-american-man-t-shirt-leggings-trainers 1.png" alt="Card image cap">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Fahri</h5>
+                                      <p class="card-text">UI/UX</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-img-top" src="../public/images/a2.png" alt="Card image cap">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Helmi</h5>
+                                      <p class="card-text">Tech FE</p>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div> 
+                    </div>
+                        <!-- Add Pagination -->
+                        <div class="row justify-content-center"> 
+                            <div class="swiper-pagination"></div>
+                      </div>    
+                </div>
+		        </div>
+            </div>
+        </div> 
+        <!-- Bottom Wrap -->
+         <div class="btm__wrapper">
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <p>Butuh penyemangat? Kamu bisa subscribe untuk diberikan kalimat penyemangat dan motivasi di hari-harimu!</p>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-light"> <a href="#">Aku mau diberi semangat! →</a></button> 
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        </div>
+    
     </main>
     <!-- end content -->
 
@@ -64,27 +302,30 @@
     <!-- footer -->
     <footer>
         <p>
-            <span id="years"></span> Copyright Team D - All rights reserved
+            <span id="years"></span> Copyright Team C - All rights reserved
         </p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-        <!-- javascript boostrap -->
-    <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/js/bootstrap.js">
+    <!-- javascript -->
+    <link rel="stylesheet" href="./../assets/vendors/bootstrap/dist/js/bootstrap.min.js">
     <script>
         const year = document.querySelector('#years');
-
+        var swiper = new Swiper('.swiper-container', {
+      effect: 'cube',
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+        
         // tampilkan tahun
         year.innerHTML = new Date().getFullYear();
     </script>
 </body>
-
 </html>
