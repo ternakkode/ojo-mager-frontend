@@ -3,7 +3,7 @@ const User = require('../api/User');
 async function isLogin(req, res, next) {
     const token = req.cookies.jwt_token;
     if (!token) {
-        res.redirect('/login')
+        return res.redirect('/login')
     }
 
     const userApi = new User();
@@ -15,7 +15,7 @@ async function isLogin(req, res, next) {
     } catch (err) {
         res.cookie('jwt_token', null, {maxAge: -1});
         res.cookie('user', null, {maxAge: -1});
-        res.redirect('/login');
+        return res.redirect('/login');
     }
 }
 
