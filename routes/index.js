@@ -11,7 +11,7 @@ indexRoute.get('/', async (req, res) => {
     await programApi.getPrograms(null, null, null, 3).then(res => {
         threePrograms = res.data.data;
     }).catch(err => {
-        console.log(err)
+
     });
 
     const articleApi = new Article;
@@ -19,7 +19,7 @@ indexRoute.get('/', async (req, res) => {
     await articleApi.getArticles(null, null, null, 3).then(res => {
         threeArticles = res.data.data;
     }).catch(err => {
-        console.log(err)
+        
     });
 
     res.render('index', {

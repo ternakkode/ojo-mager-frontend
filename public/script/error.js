@@ -6,10 +6,17 @@ function errorHandling(err) {
         case 401:
             if (errorMessage == 'WRONG_PASSWORD') {
                 return customErrorAlert('Email & password yang anda masukkan tidak tepat');
+            } else if (errorMessage == 'unauthorized') {
+                customErrorAlertWithTimer('Mohon maaf anda perlu login terlebih dahulu untuk menikmati layanan kamu');
+                setTimeout(() => {
+                    window.location.reload('/login')
+                }, 2000)
             }
         case 400:
             if (errorMessage == 'ALREADY_VERIFIED') {
                 return customErrorAlert('User telah terverifikasi');
+            } else if (errorMessage == 'already subscribe newsletter') {
+                return customErrorAlert('Anda telah berlangganan, jika ingin berhenti silahkan ubah melalui halaman profile');
             }
             break;
         case 404:

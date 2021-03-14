@@ -13,9 +13,7 @@ async function isLogin(req, res, next) {
 
         next();
     } catch (err) {
-        res.cookie('jwt_token', null, {maxAge: -1});
-        res.cookie('user', null, {maxAge: -1});
-        return res.redirect('/login');
+        return res.cookie('jwt_token', null, {maxAge: -1}).cookie('user', null, {maxAge: -1}).redirect('/login');
     }
 }
 

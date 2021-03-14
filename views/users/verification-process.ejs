@@ -19,11 +19,11 @@
             if (token) {
                 setTimeout(()=> {
                     window.location.replace('/');
-                }, 3000)
+                }, 2000)
             } else {
                 setTimeout(()=> {
                     window.location.replace('/login');
-                }, 3000)
+                }, 2000)
             }
         </script>
     <%  } else if (error == 'USER_NOT_FOUND' || error == 'CODE_NOT_FOUND') { %>
@@ -32,7 +32,7 @@
 
             setTimeout(()=> {
                 window.location.replace('/');
-            }, 3000)
+            }, 2000)
         </script>
     <% } else if (error == 'ALREADY_VERIFIED') { %>
         <script>
@@ -40,7 +40,7 @@
 
             setTimeout(()=> {
                 window.location.replace('/');
-            }, 3000)
+            }, 2000)
         </script>
     <% } %>
 </body>

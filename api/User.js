@@ -147,6 +147,14 @@ class User extends Base {
         
         return await this.createRequest();
     }
+
+    async subscribeNewsletter(token) {
+        this.setMethod('post');
+        this.needLogin(token);
+        this.setEndpoint('/newsletter/subscribe');
+        
+        return await this.createRequest();
+    }
 }
 
 module.exports = User;
