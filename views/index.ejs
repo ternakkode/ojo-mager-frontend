@@ -7,7 +7,7 @@
 
 <body>
     <%- include('./includes/navigation.ejs')%>
-    <main class="landingPage">
+    <main class="landingPage" style="margin-top: 72px;">
         <!-- Top Wrap -->
         <div class="top__wrapper">
             <div class="jumbotron">
@@ -89,6 +89,7 @@
                         <!-- Card Pertama  -->
                         <% threeArticles.forEach(threeArticle=> { %>
                         <div class="col-md-4 col-12">
+                            <a href="/article/<%= threeArticle.slug %>" style="text-decoration: none; color: inherit;">
                             <div class="card shadow">
                                 <img class="card-img-top" src="<%= threeArticle.image_url %> " alt="Card image cap">
                                 <div class="card-body">
@@ -102,6 +103,7 @@
                                     <p class="card-description"><%= threeArticle.truncated_content %> </p>
                                 </div>
                             </div>
+                        </a>
                         </div>
                         <% }) %>
                     </div>
