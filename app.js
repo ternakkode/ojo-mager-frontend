@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
+const indexRoutes = require('./routes/index');
 const programsRoutes = require('./routes/programs');
 const usersRoutes = require('./routes/users');
 const articlesRoute = require('./routes/articles');
@@ -18,9 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
-    res.render('index')
-})
+app.use(indexRoutes);
 app.use(usersRoutes);
 app.use(programsRoutes);
 app.use(articlesRoute);
