@@ -4,7 +4,7 @@ function successAlertWithTimer(message) {
         title: 'Berhasil',
         text: message,
         showConfirmButton: false,
-        timer: 3000
+        timer: 2000
     });
 }
 
@@ -38,6 +38,6 @@ function customErrorAlertWithTimer(message) {
         title: 'Gagal',
         text: message,
         showConfirmButton: false,
-        timer: 3000
+        timer: 2000
     });
 }

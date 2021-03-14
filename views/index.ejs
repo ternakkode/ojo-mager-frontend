@@ -7,304 +7,379 @@
 
 <body>
     <%- include('./includes/navigation.ejs')%>
-        <main class="landingPage">
-            <!-- Top Wrap -->
-            <div class="top__wrapper">
-                <div class="jumbotron">
-                    <div class="container">
-                        <h1 class="display-4"> Konten olahraga rumahan.<br>
-                            Untuk kamu yang beraktivitas di rumah.</h1>
-                    </div>
+    <main class="landingPage">
+        <!-- Top Wrap -->
+        <div class="top__wrapper">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-4"> Konten olahraga rumahan.<br>
+                        Untuk kamu yang beraktivitas di rumah.</h1>
                 </div>
             </div>
-            <!-- Card Content  -->
-            <div class="card__content">
-                <!-- Ini Card Program Latihan -->
-                <div class="container">
-                    <div class="landing__program">
-                        <div class="row title">
-                            <h2>Masih bingung mau mulai dari mana?</h2>
+        </div>
+        <!-- Card Content  -->
+        <div class="card__content">
+            <!-- Ini Card Program Latihan -->
+            <div class="container">
+                <div class="landing__program">
+                    <div class="row title">
+                        <h2>Masih bingung mau mulai dari mana?</h2>
+                    </div>
+                    <div class="row sub-title">
+                        <div class="col">
+                            <p>Ada program olahraga yang bisa kamu coba dulu nih!</p>
                         </div>
-                        <div class="row sub-title">
-                            <div class="col">
-                                <p>Ada program olahraga yang bisa kamu coba dulu nih!</p>
-                            </div>
-                            <div class="col text-right">
-                                <a href="/program">Lihat semua →</a>
-                            </div>
+                        <div class="col text-right">
+                            <a href="/program">Lihat semua →</a>
                         </div>
-                        <div class="row">
-                            <!-- Card Loop limit 3  -->
-                            <% threePrograms.forEach(threeProgram=> {%>
-                                <div class="col-md-4 col-12">
-                                    <a href="/program/<%= threeProgram.slug %>" style="text-decoration: none; color: inherit;">
-                                    <div class="card shadow-sm">
-                                        <img class="card-img-top" src="<%= threeProgram.image_url %> "
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <div class="card__header">
-                                                <h5 class="card-title" style="background-color: #<%= threeProgram.program_type_button_color_code %>;">
-                                                    <%= threeProgram.program_type_name %>
-                                                </h5>
-                                                <svg width="19" height="21" viewBox="0 0 19 21" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M12.0703 0.0100098H6.07031V2.01001H12.0703V0.0100098ZM8.07031 13.01H10.0703V7.01001H8.07031V13.01ZM16.1003 6.39001L17.5203 4.97001C17.0903 4.46001 16.6203 3.98001 16.1103 3.56001L14.6903 4.98001C13.0976 3.69834 11.1146 2.9997 9.07031 3.00001C4.10031 3.00001 0.0703125 7.03001 0.0703125 12C0.0703125 16.97 4.09031 21 9.07031 21C14.0503 21 18.0703 16.97 18.0703 12C18.0703 9.89001 17.3303 7.94001 16.1003 6.39001ZM9.07031 19.01C5.20031 19.01 2.07031 15.88 2.07031 12.01C2.07031 8.14001 5.20031 5.01001 9.07031 5.01001C12.9403 5.01001 16.0703 8.14001 16.0703 12.01C16.0703 15.88 12.9403 19.01 9.07031 19.01Z"
-                                                        fill="#757575" />
-                                                </svg>
-                                                <p>
-                                                    <%= parseSecond(threeProgram.duration) %>
-                                                </p>
-                                            </div>
-                                            <h3 class="card-text">
-                                                <%= threeProgram.title %>
-                                            </h3>
-                                            <p class="card-description">
-                                                <%= truncateString(threeProgram.description) %>
+                    </div>
+                    <div class="row">
+                        <!-- Card Loop limit 3  -->
+                        <% threePrograms.forEach(threeProgram=> {%>
+                        <div class="col-md-4 col-12">
+                            <a href="/program/<%= threeProgram.slug %>" style="text-decoration: none; color: inherit;">
+                                <div class="card shadow">
+                                    <img class="card-img-top" src="<%= threeProgram.image_url %> " alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="card__header">
+                                            <h5 class="card-title"
+                                                style="background-color: #<%= threeProgram.program_type_button_color_code %>;">
+                                                <%= threeProgram.program_type_name %>
+                                            </h5>
+                                            <svg width="19" height="21" viewBox="0 0 19 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.0703 0.0100098H6.07031V2.01001H12.0703V0.0100098ZM8.07031 13.01H10.0703V7.01001H8.07031V13.01ZM16.1003 6.39001L17.5203 4.97001C17.0903 4.46001 16.6203 3.98001 16.1103 3.56001L14.6903 4.98001C13.0976 3.69834 11.1146 2.9997 9.07031 3.00001C4.10031 3.00001 0.0703125 7.03001 0.0703125 12C0.0703125 16.97 4.09031 21 9.07031 21C14.0503 21 18.0703 16.97 18.0703 12C18.0703 9.89001 17.3303 7.94001 16.1003 6.39001ZM9.07031 19.01C5.20031 19.01 2.07031 15.88 2.07031 12.01C2.07031 8.14001 5.20031 5.01001 9.07031 5.01001C12.9403 5.01001 16.0703 8.14001 16.0703 12.01C16.0703 15.88 12.9403 19.01 9.07031 19.01Z"
+                                                    fill="#757575" />
+                                            </svg>
+                                            <p>
+                                                <%= parseSecond(threeProgram.duration) %>
                                             </p>
                                         </div>
+                                        <h3 class="card-text">
+                                            <%= threeProgram.title %>
+                                        </h3>
+                                        <p class="card-description">
+                                            <%= truncateString(threeProgram.description) %>
+                                        </p>
                                     </div>
-                                    </a>
                                 </div>
-                                <% }); %>
+                            </a>
                         </div>
+                        <% }); %>
                     </div>
                 </div>
-                <br><br>
-                <!-- Ini Card Artikel-->
+            </div>
+            <br><br>
+            <!-- Ini Card Artikel-->
+            <div class="container">
+                <div class="landing__article">
+                    <div class="row title">
+                        <h2>Hidup Sehat. Tetap Bugar.</h2>
+                    </div>
+                    <div class="row sub-title">
+                        <div class="col">
+                            <p>Dengan konten bacaan tentang olahraga dan kesehatan yang ditulis oleh para pakar</p>
+                        </div>
+                        <div class="col-2 text-right">
+                            <a href="/article">Lihat semua →</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Card Pertama  -->
+                        <% threeArticles.forEach(threeArticle=> { %>
+                        <div class="col-md-4 col-12">
+                            <div class="card shadow">
+                                <img class="card-img-top" src="<%= threeArticle.image_url %> " alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="card__header">
+                                        <h5 class="card-title"
+                                            style="background-color: #<%= threeArticle.category_button_color_code %>;">
+                                            <%= threeArticle.category_name %>
+                                        </h5>
+                                    </div>
+                                    <h3 class="card-text"><%= threeArticle.title %> </h3>
+                                    <p class="card-description"><%= threeArticle.truncated_content %> </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mid Wrap -->
+        <div class="mid__wrapper">
+            <div class="jumbotron">
                 <div class="container">
-                    <div class="landing__article">
-                        <div class="row title">
-                            <h2>Hidup Sehat. Tetap Bugar.</h2>
+                    <div class="row justify-content-center">
+                        <h1 class="display-4">
+                            TENTANG OJOMAGER
+                        </h1>
+                        <h2>
+                            Dibuat dari kami, untuk kamu yang sibuk dengan kegiatan di rumah dan butuh konten
+                            olahraga rumahan
+                        </h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <h1>50+</h1>
+                            <p>Lebih dari 50+ konten video olahraga ditonton dalam sebulan</p>
                         </div>
-                        <div class="row sub-title">
-                            <div class="col">
-                                <p>Dengan konten bacaan tentang olahraga dan kesehatan yang ditulis oleh para pakar</p>
-                            </div>
-                            <div class="col-2 text-right">
-                                <a href="/article">Lihat semua →</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <!-- Card Pertama  -->
-                            <% threeArticles.forEach(threeArticle=> { %>
-                                <div class="col-md-4 col-12">
-                                    <div class="card shadow-sm">
-                                        <img class="card-img-top" src="<%= threeArticle.image_url %> " alt="Card image cap">
-                                        <div class="card-body">
-                                            <div class="card__header">
-                                                <h5 class="card-title" style="background-color: #<%= threeArticle.category_button_color_code %>;">
-                                                    <%= threeArticle.category_name %>
-                                                </h5>
-                                            </div>
-                                            <h3 class="card-text"><%= threeArticle.title %> </h3>
-                                            <p class="card-description"><%= threeArticle.truncated_content %> </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <% }) %>
+                        <div class="col-4">
+                            <h1>100+</h1>
+                            <p>Lebih dari 100 konten video olahraga gratis yang cocok untuk dilakukan dirumah</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Mid Wrap -->
-            <div class="mid__wrapper">
-                <div class="jumbotron">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <h1 class="display-4">
-                                TENTANG OJOMAGER
-                            </h1>
-                            <h2>
-                                Dibuat dari kami, untuk kamu yang sibuk dengan kegiatan di rumah dan butuh konten
-                                olahraga rumahan
-                            </h2>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-4">
-                                <h1>50+</h1>
-                                <p>Lebih dari 50+ konten video olahraga ditonton dalam sebulan</p>
+        </div>
+        <!-- Our Service -->
+        <div class="our-services">
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <h1 class="display-4">
+                            LAYANAN KAMI
+                        </h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h2>
+                            Menyediakan berbagai panduan<br>olahraga di rumah.
+                        </h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <img src="/images/card service row.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Our Team -->
+        <div class="our-teams">
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <h1 class="display-4">
+                            TIM KAMI
+                        </h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h2>
+                            OjoMager
+                        </h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <p>
+                            Dari Sabang sampai Merauke, berjajar tim kami
+                        </p>
+                    </div>
+                    <div class="swiper-container" id="swiper-container2" style="width:1000px;margin-bottom: 30px;">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Fahri.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Ahmad Ghifari</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">UI/UX</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://www.linkedin.com/askfahri?_l=en_US"
+                                                class="fab fa-linkedin mr-1"></a>
+                                            <a href="https://t.me/askfahri" class="fab fa-telegram mr-1"></a>
+                                            <a href="mailto:personal.ghifari@gmail.com"
+                                                class="fas fa-envelope mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-4">
-                                <h1>100+</h1>
-                                <p>Lebih dari 100 konten video olahraga gratis yang cocok untuk dilakukan dirumah</p>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Fatimah.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Fatimah</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">UI/UX</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://www.instagram.com/fatimahalmadihij96/"
+                                                class="fab fa-instagram mr-1"></a>
+                                            <a href="https://t.me/Fatimahfm05" class="fab fa-telegram mr-1"></a>
+                                            <a href="mailto:fatimahalmadihij96@gmail.com"
+                                                class="fas fa-envelope mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Firhan.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            M. Firhan Azmi N</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">Tech Lead / Developer</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://www.linkedin.com/in/muhammadhan/"
+                                                class="fab fa-linkedin mr-1"></a>
+                                            <a href="https://github.com/ternakkode" class="fab fa-github mr-1"></a>
+                                            <a href="mailto:muhammad.firhan.azmi@gmail.com"
+                                                class="fas fa-envelope mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Erwin.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Erwin Ramadhan</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">Developer</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://www.linkedin.com/in/erwin-ramadhan-edwar-putra/"
+                                                class="fab fa-linkedin mr-1"></a>
+                                            <a href="https://www.instagram.com/erwinramadhan97/" class="fab fa-instagram mr-1"></a>
+                                            <a href="mailto:erwinramadhan35@gmail.com"
+                                                class="fas fa-envelope mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Helmi.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Helmi Agustiawan</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">Developer</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://www.linkedin.com/in/helmi-agustiawan-6455b81b1"
+                                                class="fab fa-linkedin mr-1"></a>
+                                            <a href="https://www.instagram.com/helmi_agustiawan" class="fab fa-instagram mr-1"></a>
+                                            <a href="https://github.com/velvas45"
+                                                class="fab fa-github mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Clemens.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Clemens Ferryanto</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">Developer</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://twitter.com/CFerryanto"
+                                                class="fab fa-twitter mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Argo.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Argo Satrio Utomo</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">Developer</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="linkedin.com/in/argosatrioutomo"
+                                                class="fab fa-linkedin mr-1"></a>
+                                            <a href="https://www.instagram.com/argogroar" class="fab fa-instagram mr-1"></a>
+                                            <a href="mailto:argosatrio30@gmail.com"
+                                                class="fas fa-envelope mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Dimas.jpeg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Mikael Dimas</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">Developer</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://www.linkedin.com/in/mikael-dimas-8391a31b7/"
+                                                class="fab fa-linkedin mr-1"></a>
+                                            <a href="https://www.instagram.com/mikael_dimas29/" class="fab fa-instagram mr-1"></a>
+                                            <a href="https://github.com/mikaeldimas"
+                                                class="fab fa-github mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide shadow rounded">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Zaki.jpg" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold" style="margin-bottom: 2px !important;">
+                                            Dimas Ichwanu</h5>
+                                        <p class="card-text text-muted" style="margin-bottom: 2px !important;">Developer</p>
+                                        <div class="justify-content-center text-center">
+                                            <a href="https://www.linkedin.com/in/ichwanuzaki/"
+                                                class="fab fa-linkedin mr-1"></a>
+                                            <a href="https://github.com/ichwanuzaki" class="fab fa-github mr-1"></a>
+                                            <a href="mailto:dimasichwanu@gmail.com"
+                                                class="fas fa-envelope mr-1"></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Our Service -->
-            <div class="our-services">
-                <div class="jumbotron">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <h1 class="display-4">
-                                LAYANAN KAMI
-                            </h1>
+        </div>
+        </div>
+        <!-- Bottom Wrap -->
+        <div class="btm__wrapper">
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <p>Butuh penyemangat? Kamu bisa subscribe untuk diberikan kalimat penyemangat dan
+                                motivasi
+                                di hari-harimu!</p>
                         </div>
-                        <div class="row justify-content-center">
-                            <h2>
-                                Menyediakan berbagai panduan<br>olahraga di rumah.
-                            </h2>
-                        </div>
-                        <div class="row justify-content-center">
-                            <img src="/images/card service row.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <!-- Our Team -->
-            <div class="our-teams">
-                <div class="jumbotron">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <h1 class="display-4">
-                                TIM KAMI
-                            </h1>
-                        </div>
-                        <div class="row justify-content-center">
-                            <h2>
-                                OjoMager
-                            </h2>
-                        </div>
-                        <div class="row justify-content-center">
-                            <p>
-                                Dari Sabang sampai Merauke, berjajar tim kami
-                            </p>
-                        </div>
-                        <div class="swiper-container" id="swiper-container2" style="width:800px;">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide active-slider">
-                                    <div class="card">
-                                        <img class="card-img-top" src="/images/IMG_Firhan.jpeg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Firhan</h5>
-                                            <p class="card-text">
-                                                Tech Lead
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-img-top" src="/images/IMG_Helmi.jpeg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Helmi</h5>
-                                            <p class="card-text">FE Lead</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-img-top" src="/images/IMG_Fahri.jpeg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Fahri</h5>
-                                            <p class="card-text">UI/UX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-img-top" src="/images/IMG_Fatimah.jpeg"
-                                                alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Fatimah</h5>
-                                                <p class="card-text">UI/UX</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-img-top" src="/images/IMG_Erwin.jpeg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Erwin</h5>
-                                                <p class="card-text">Developer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-img-top" src="images/IMG_Clemens.jpeg"
-                                                alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Clemens</h5>
-                                                <p class="card-text">Developer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-img-top" src="/images/IMG_Argo.jpeg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Argo</h5>
-                                                <p class="card-text">Developer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-img-top" src="/images/IMG_Dimas.jpeg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Dimas</h5>
-                                            <p class="card-text">Developer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-img-top" src="/images/IMG_Zaki.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Zaki</h5>
-                                            <p class="card-text">Developer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-light" id="subscribeNewsletter"
+                                style="color: #42A5F5">Aku mau diberi semangat! <i
+                                    class="fab fa-telegram-plane"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
-            <!-- Bottom Wrap -->
-            <div class="btm__wrapper">
-                <div class="jumbotron">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-8">
-                                <p>Butuh penyemangat? Kamu bisa subscribe untuk diberikan kalimat penyemangat dan
-                                    motivasi
-                                    di hari-harimu!</p>
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-light"> <a href="#">Aku mau diberi semangat!
-                                        →</a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-        </main>
+    </main>
 
-        <%- include('./includes/footer.ejs')%>
-            <%- include('./includes/end.ejs')%>
-                <script>
-                    var mySwiper2 = new Swiper('#swiper-container2', {
-                        watchSlidesProgress: true,
-                        watchSlidesVisibility: true,
-                        slidesPerView: 3
-                    })
-                </script>
+    <%- include('./includes/footer.ejs')%>
+    <%- include('./includes/end.ejs')%>
+    <script>
+        var mySwiper2 = new Swiper('#swiper-container2', {
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true,
+            spaceBetween: 30,
+            slidesPerView: 4
+        })
+
+        $('#subscribeNewsletter').click(e => {
+            const userApi = new api.User();
+            const token = getCookie('jwt_token');
+
+            if (!token) {
+                customErrorAlert('Silahkan login terlebih dahulu untuk menikmati layanan ini')
+            }
+
+            userApi.subscribeNewsletter(token).then(res => {
+                sucessAlertWithConfirmationButton(
+                    'Kami akan berikan kalimat motivasi dan penyemangat melalui e-mail kamu ya!')
+            }).catch(err => {
+                errorHandling(err.response);
+            })
+        })
+    </script>
 </body>
 
 </html>

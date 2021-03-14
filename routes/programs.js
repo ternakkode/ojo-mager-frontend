@@ -8,7 +8,6 @@ const isVerified = require('../middleware/isVerified');
 
 programsRoute.get('/program', isLogin, isVerified, async (req, res) => {
     const { title, type, page } = req.query;
-    console.log('sampe sini');
     const programApi = new Program();
 
     let programs = [];
