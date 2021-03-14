@@ -214,6 +214,46 @@ class User extends Base {
 
         return await this.createRequest();
     }
+
+    async getFavoritesPrograms(token, title = null, category = null, isRandom = false, limit = null) {
+        if (title) {
+            this.addParams('title', title);
+        }
+
+        if (category) {
+            this.addParams('type', category);
+        }
+
+        if (isRandom) {
+            this.addParams('isRandom', isRandom);
+        }
+
+        if (limit) {
+            this.addParams('limit', limit);
+        }
+
+        this.needLogin(token);
+        this.setEndpoint(this.feature_url + '/favorites-programs');
+        this.setMethod('get');
+
+        return await this.createRequest();
+    }
+
+    async addFavoritesProgram(token, program_id) {
+        this.setMethod('post');
+        this.needLogin(token);
+        this.setEndpoint(this.feature_url + '/favorites-programs/' + program_id);
+
+        return await this.createRequest();
+    }
+
+    async deleteFavoritesProgram(token, program_id) {
+        this.setMethod('delete');
+        this.needLogin(token);
+        this.setEndpoint(this.feature_url + '/favorites-programs/' + program_id);
+        
+        return await this.createRequest();
+    }
 }
 
 module.exports = User;

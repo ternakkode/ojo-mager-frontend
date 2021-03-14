@@ -117,6 +117,10 @@ html {
           filter: invert(1);
 }
 
+header {
+  margin-bottom: 72px;
+}
+
 header .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -134,7 +138,7 @@ header .navbar .btn {
 }
 
 header .navbar .navbar-nav {
-  font-family: 'Nunito Sans';
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 12px;
 }
 
@@ -163,6 +167,15 @@ header .navbar .gambar {
 
 header .navbar .dropdown {
   margin-right: 30px;
+}
+
+header .navbar .dropdown-item {
+  font-size: 12px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+header .navbar .logout {
+  color: red;
 }
 
 footer {
@@ -446,7 +459,11 @@ footer p.end::before {
 
 .landingPage .mid__wrapper .jumbotron {
   height: 460px;
+<<<<<<< HEAD
   background-color: #42A5F5;
+=======
+  background-color: #E3F2FD;
+>>>>>>> development
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -522,7 +539,11 @@ footer p.end::before {
 }
 
 .landingPage .our-services .jumbotron .container .display-4 span {
+<<<<<<< HEAD
   color: #42A5F5;
+=======
+  color: #E3F2FD;
+>>>>>>> development
   font-size: 20px;
 }
 
@@ -555,7 +576,11 @@ footer p.end::before {
 
 .landingPage .our-team .jumbotron .container .display-4 span {
   font-size: 20px;
+<<<<<<< HEAD
   color: #42A5F5;
+=======
+  color: #E3F2FD;
+>>>>>>> development
 }
 
 .landingPage .our-team .jumbotron .container p {
@@ -574,7 +599,11 @@ footer p.end::before {
 
 .landingPage .btm__wrapper .jumbotron {
   height: 121px;
+<<<<<<< HEAD
   background-color: #42A5F5;
+=======
+  background-color: #E3F2FD;
+>>>>>>> development
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -598,6 +627,7 @@ footer p.end::before {
 }
 
 .landingPage .btm__wrapper .jumbotron .container a {
+<<<<<<< HEAD
   color: #42A5F5;
 }
 
@@ -661,6 +691,60 @@ footer p.end::before {
 
 .detailArticle .card__content .card-title.nutrisi .card-text {
   font-size: 20px;
+=======
+  color: #E3F2FD;
+}
+
+.detailArticle {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.detailArticle .article .h2 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.detailArticle .card__content .card {
+  border-radius: 8px;
+  border: none;
+}
+
+.detailArticle .card__content .card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.detailArticle .card__content .card-body {
+  padding-top: 18px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  padding-left: 24px;
+  min-height: 310px;
+}
+
+.detailArticle .card__content .card-body .btn-success {
+  background-color: #00B292;
+  border-color: #00B292;
+}
+
+.detailArticle .card__content .card-body #tombolartikel {
+  font-weight: 600;
+  padding: 2px 8px;
+  font-size: 16px;
+  margin-bottom: 8px !important;
+}
+
+.detailArticle .card__content .card-body h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.detailArticle .card__content .card-body p {
+  color: #757575;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 0px;
+>>>>>>> development
 }
 
 .profile {
@@ -694,12 +778,117 @@ footer p.end::before {
   margin-top: 20px;
 }
 
-.listOlahraga .pagination > li > a {
+.listOlahraga {
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 20px 0 40px 0;
+}
+
+.listOlahraga h2 {
+  font-weight: 700;
+}
+
+.listOlahraga .row {
+  row-gap: 20px;
+  margin-bottom: 30px;
+}
+
+.listOlahraga .dropdown {
+  margin-bottom: 50px;
+}
+
+.listOlahraga .dropdown .btn-primary {
+  background-color: #42A5F5;
+  border-color: #42A5F5;
+}
+
+.listOlahraga .dropdown .dropdown-item:hover {
+  background-color: #42A5F5;
+  color: white;
+}
+
+.listOlahraga .searchbar .bg-primary {
+  background-color: #42A5F5 !important;
+  border-color: #42A5F5 !important;
+}
+
+.listOlahraga .searchbar svg {
+  margin-left: 13px;
+}
+
+.listOlahraga .searchbar button {
+  padding-left: 13px;
+  padding-right: 19px;
+}
+
+.listOlahraga .card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.listOlahraga .card {
+  border-radius: 8px;
   border: none;
 }
 
-.listOlahraga .pagination > li > a:hover {
-  background: #E3F2FD;
+.listOlahraga .card-body {
+  padding-top: 18px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  padding-left: 24px;
+  min-height: 310px;
+}
+
+.listOlahraga .card-body .btn-success {
+  background-color: #00B292;
+  border-color: #00B292;
+}
+
+.listOlahraga .card-body #tombolartikel {
+  font-weight: 600;
+  padding: 2px 8px;
+  font-size: 16px;
+  margin-bottom: 8px !important;
+}
+
+.listOlahraga .card-body h4.card-text {
+  font-size: 20px;
+}
+
+.listOlahraga .card-body h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.listOlahraga .card-body h6 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.listOlahraga .card-body p {
+  color: #757575;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 0px;
+}
+
+.listOlahraga .card__content .col-md-4 {
+  padding: 0px 20px;
+}
+
+.listOlahraga .card__content a {
+  text-decoration: none;
+}
+
+.listOlahraga .card__content a h6 {
+  color: #212121;
+}
+
+.detail__olahraga .info__video--content p {
+  margin-bottom: 0;
+}
+
+.detail__olahraga .info__video--description p {
+  color: #BDBDBD;
 }
 
 .detail__olahraga .thumbnail__donasi .container {
@@ -727,7 +916,6 @@ footer p.end::before {
 }
 
 .detail__olahraga .swiper-slide .card {
-  text-align: center;
   border-radius: 12px;
   border: 2px solid rgba(0, 0, 0, 0.2);
 }

@@ -1,0 +1,139 @@
+.listOlahraga{
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 20px 0 40px 0;
+
+    h2{
+        font-weight: 700;
+    }
+
+    .row{
+        row-gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .dropdown{
+        margin-bottom: 50px;
+        .btn-primary{
+            background-color: #42A5F5;
+            border-color: #42A5F5;
+        }
+        .dropdown-item:hover{
+            background-color: #42A5F5;
+            color: white;
+        }
+    }
+
+    .searchbar{
+        .bg-primary{
+            background-color: #42A5F5 !important;
+            border-color: #42A5F5 !important;
+        }
+        svg{
+            margin-left: 13px;
+        }
+        button{
+            padding-left: 13px;
+            padding-right: 19px;
+        }
+    }
+
+    // Card
+    .card-img-top{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card{
+        border-radius: 8px;
+        border: none;
+    }
+
+    .card-body{
+        padding-top: 18px;
+        padding-bottom: 16px;
+        padding-right: 24px;
+        padding-left: 24px;
+        min-height: 310px;
+        .btn-success{
+            background-color:#00B292;
+            border-color: #00B292;
+        }
+        #tombolartikel{
+            font-weight: 600;
+            padding: 2px 8px;
+            font-size: 16px;
+            margin-bottom: 8px !important;
+        }
+        h4.card-text{
+            font-size: 20px;
+        }
+        h5{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        h6{
+            font-size: 20px;
+            margin-bottom: 12px
+        }
+        p{
+            color:#757575;
+            font-size: 20px;
+            line-height: 27px;
+            margin-bottom: 0px;
+        }
+    }
+
+    .card__content{
+        .col-md-4{
+            padding: 0px 20px;
+        }
+        a{
+            text-decoration: none;
+            h6{
+                color: #212121;
+            }
+        }
+    }
+}
+
+.detail__olahraga{
+    .thumbnail__donasi{
+        .container{
+            background: $Color6;
+            border-radius: 12px;
+
+            p{
+                font-weight: lighter;
+            }
+
+            .header {
+                p{
+                    text-align: justify;
+                }
+            }
+
+        }
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+
+        .card{
+            text-align: center;
+            border-radius: 12px;
+            border: 2px solid rgba($color: #000000, $alpha: .2);
+        }
+        
+        .swiper-slide-shadow-left, .swiper-slide-shadow-right{
+            background-image: none;
+        }
+    }
+}
+

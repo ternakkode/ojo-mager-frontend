@@ -3,8 +3,10 @@ const Program = require('../api/Program');
 const ProgramType = require('../api/ProgramType');
 const timeUtils = require('../utils/time');
 const stringUtils = require('../utils/string');
+const isLogin = require('../middleware/isLogin');
+const isVerified = require('../middleware/isVerified');
 
-programsRoute.get('/programs', async (req, res) => {
+programsRoute.get('/program', isLogin, isVerified, async (req, res) => {
     const { title, type } = req.query;
 
     const programApi = new Program();
@@ -31,6 +33,32 @@ programsRoute.get('/programs', async (req, res) => {
     });
 });
 
-// programsRoute.get('/detail-olahraga', detailProgramControllers.getDetailProgram);
+programsRoute.get('/program/:slug', isLogin, isVerified, async (req, res) => {
+    const { slug } = req.params;
+    const token = req.cookies.jwt_token;
+
+    const programApi = new Program();
+
+    let program = null;
+    await programApi.getProgram(token, slug).then(res => {
+        program = res.data.data;
+    }).catch(err => {
+        return res.redirect('/')
+    });
+
+    let randomProgram = [];
+    await programApi.getPrograms(null, null, true, 6).then(res => {
+        randomProgram = res.data.data;
+    }).catch(err => {
+
+    })
+
+    res.render('programs/detail', { 
+        program, 
+        randomProgram,
+        parseSecond: timeUtils.parseSecond,
+        truncateString: stringUtils.truncateString
+    });
+});
 
 module.exports = programsRoute;
