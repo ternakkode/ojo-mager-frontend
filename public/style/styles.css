@@ -117,11 +117,8 @@ html {
           filter: invert(1);
 }
 
-header {
-  margin-bottom: 72px;
-}
-
 header .navbar {
+  margin-bottom: 72px;
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: white;
@@ -357,6 +354,10 @@ footer p.end::before {
      object-fit: cover;
 }
 
+.landingPage {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 .landingPage .top__wrapper .jumbotron {
   height: 492px;
   background-image: url("../images/portrait-couple-doing-exercise-together-watching-video-tutorial-laptop-while-staying-home-sport-concept-new-normal-lifestyle-freepik.png");
@@ -381,32 +382,87 @@ footer p.end::before {
   font-size: 60px;
 }
 
-.landingPage .card__content .landing__program h2 {
+.landingPage .card__content {
   margin-top: 40px;
-  margin-bottom: 13px;
-  font-family: "NunitoSans";
+}
+
+.landingPage .card__content .col-md-4 {
+  padding: 0px 20px;
+}
+
+.landingPage .card__content .landing__program .row.title {
+  margin: 0px;
+}
+
+.landingPage .card__content .landing__program .row.sub-title {
+  margin-bottom: 18px;
+  margin-top: 13px;
+}
+
+.landingPage .card__content .landing__program h2 {
   font-size: 36px;
   font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.landingPage .card__content .landing__program p {
+  font-size: 18px;
+}
+
+.landingPage .card__content .landing__program a {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+.landingPage .card__content .landing__article .row.title {
+  margin: 0px;
+}
+
+.landingPage .card__content .landing__article .row.sub-title {
+  margin-bottom: 18px;
+  margin-top: 13px;
 }
 
 .landingPage .card__content .landing__article h2 {
-  margin-top: 40px;
-  margin-bottom: 13px;
-  font-family: "NunitoSans";
   font-size: 36px;
   font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.landingPage .card__content .landing__article p {
+  font-size: 18px;
+}
+
+.landingPage .card__content .landing__article a {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
 }
 
 .landingPage .card__content p {
-  font-family: 'Lato';
-  font-size: 18px;
-  color: #000000;
+  color: #757575;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 0px;
 }
 
 .landingPage .card__content .card-body {
-  max-height: 500px;
-  font-family: 'NunitoSans';
-  font-size: 20px;
+  padding-top: 18px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  padding-left: 24px;
+  min-height: 310px;
+}
+
+.landingPage .card__content .card-body p {
+  font-size: 16px;
+}
+
+.landingPage .card__content .card-body h3.card-text {
+  text-align: left;
+}
+
+.landingPage .card__content .card-body p.card-description {
+  text-align: left;
 }
 
 .landingPage .card__content a {
@@ -414,12 +470,14 @@ footer p.end::before {
 }
 
 .landingPage .card__content .card {
-  -webkit-box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(28, 5, 77, 0.1);
-          box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(28, 5, 77, 0.1);
+  border-radius: 8px;
+  border: none;
 }
 
 .landingPage .card__content .card-img-top {
-  height: 350px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  max-height: 226.66px;
 }
 
 .landingPage .card__content .card__header {
@@ -436,15 +494,28 @@ footer p.end::before {
 }
 
 .landingPage .card__content .card-title {
-  background-color: #263238;
+  background-color: #00B292;
   margin-right: 1rem;
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
   color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.landingPage .card__content h3.card-text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.landingPage .card__content p.card-description {
+  color: #757575;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 0px;
 }
 
 .landingPage .card__content .card-title.kataPakar {
-  background-color: #000000;
   margin-right: 1rem;
   padding: 2px 8px;
   border-radius: 4px;
@@ -458,30 +529,32 @@ footer p.end::before {
 }
 
 .landingPage .mid__wrapper .jumbotron {
-  height: 460px;
+  height: auto;
   background-color: #42A5F5;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  padding-bottom: 0px;
 }
 
 .landingPage .mid__wrapper .jumbotron .container {
-  position: absolute;
-  top: 10%;
-  left: 10%;
   text-align: justify;
   color: #fff;
-  font-family: 'NunitoSans';
+  text-align: center;
+  padding: 60px 0px;
 }
 
 .landingPage .mid__wrapper .jumbotron .container h1 {
-  text-align: center;
-  font-size: 36px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-.landingPage .mid__wrapper .jumbotron .container h1 .display-4 {
-  font-size: 20px;
+.landingPage .mid__wrapper .jumbotron .container h2 {
+  font-size: 36px;
+  padding: 0px 0px;
+  margin-bottom: 15px;
 }
 
 .landingPage .mid__wrapper .jumbotron .container .col-4 h1 {
@@ -492,6 +565,7 @@ footer p.end::before {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .landingPage .mid__wrapper .jumbotron .container .col-4 p {
@@ -504,85 +578,71 @@ footer p.end::before {
           align-items: center;
   text-align: center;
   gap: 15px;
+  font-weight: 400;
 }
 
 .landingPage .our-services .jumbotron {
-  height: 496px;
+  height: auto;
   background-color: #fff;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
 }
 
 .landingPage .our-services .jumbotron .container {
-  position: absolute;
-  top: 10%;
-  left: 10%;
   text-align: justify;
   color: #000;
-  font-family: "NunitoSans";
+  padding-top: 60px;
 }
 
 .landingPage .our-services .jumbotron .container .display-4 {
-  font-size: 36px;
+  font-size: 20px;
+  color: #0075E7;
+  margin-bottom: 15px;
   font-weight: bold;
-  font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
 }
 
-.landingPage .our-services .jumbotron .container .display-4 span {
-  color: #42A5F5;
-  font-size: 20px;
-}
-
-.landingPage .our-services .jumbotron .container h1 {
+.landingPage .our-services .jumbotron .container .row h2 {
   text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
-.landingPage .our-team .jumbotron {
-  height: 800px;
+.landingPage .our-teams .jumbotron {
+  height: auto;
   background-color: #fff;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
 }
 
-.landingPage .our-team .jumbotron .container {
-  position: absolute;
-  top: 10%;
-  left: 10%;
+.landingPage .our-teams .jumbotron .container {
   text-align: justify;
   color: #000;
-  font-family: "NunitoSans";
+  padding-top: 60px;
 }
 
-.landingPage .our-team .jumbotron .container .display-4 {
+.landingPage .our-teams .jumbotron .container .display-4 {
+  font-size: 20px;
+  color: #0075E7;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
   text-align: center;
-  font-size: 40px;
 }
 
-.landingPage .our-team .jumbotron .container .display-4 span {
-  font-size: 20px;
-  color: #42A5F5;
+.landingPage .our-teams .jumbotron .container .row h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
-.landingPage .our-team .jumbotron .container p {
-  font-size: 20px;
-  color: #000000;
-}
-
-.landingPage .our-team .jumbotron .container .swiper-container {
-  width: 300px;
-}
-
-.landingPage .our-team .jumbotron .container .swiper-slide {
-  background-position: center;
-  background-size: cover;
+.landingPage .our-teams .jumbotron .container p {
+  margin-bottom: 40px;
 }
 
 .landingPage .btm__wrapper .jumbotron {
@@ -595,12 +655,9 @@ footer p.end::before {
 }
 
 .landingPage .btm__wrapper .jumbotron .container {
-  position: absolute;
-  top: 30%;
-  left: 10%;
   text-align: justify;
   color: #fff;
-  font-family: "NunitoSans";
+  padding: 30px 0px;
 }
 
 .landingPage .btm__wrapper .jumbotron .container p {
@@ -612,68 +669,59 @@ footer p.end::before {
 
 .landingPage .btm__wrapper .jumbotron .container a {
   color: #42A5F5;
-}
-
-.detailArticle .card__content p {
-  font-size: 18px;
-  color: #000000;
-}
-
-.detailArticle .card__content .card-body {
-  max-height: 500px;
-  font-size: 20px;
-}
-
-.detailArticle .card__content a {
   text-align: right;
 }
 
+.detailArticle {
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 100px;
+}
+
+.detailArticle .article .h2 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
 .detailArticle .card__content .card {
-  -webkit-box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(28, 5, 77, 0.1);
-          box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(28, 5, 77, 0.1);
+  border-radius: 8px;
+  border: none;
 }
 
 .detailArticle .card__content .card-img-top {
-  height: 350px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-.detailArticle .card__content .card__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+.detailArticle .card__content .card-body {
+  padding-top: 18px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  padding-left: 24px;
+  min-height: 310px;
 }
 
-.detailArticle .card__content .card__header p {
-  margin-left: 15px;
+.detailArticle .card__content .card-body .btn-success {
+  background-color: #00B292;
+  border-color: #00B292;
 }
 
-.detailArticle .card__content .card-title {
-  background-color: #263238;
-  margin-right: 1rem;
+.detailArticle .card__content .card-body #tombolartikel {
+  font-weight: 600;
   padding: 2px 8px;
-  border-radius: 4px;
-  color: #fff;
+  font-size: 16px;
+  margin-bottom: 8px !important;
 }
 
-.detailArticle .card__content .card-title.kataPakar {
-  background-color: #000000;
-  margin-right: 1rem;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.detailArticle .card__content .card-title.nutrisi {
-  background-color: #202432;
-  margin-right: 1rem;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.detailArticle .card__content .card-title.nutrisi .card-text {
+.detailArticle .card__content .card-body h3 {
   font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.detailArticle .card__content .card-body p {
+  color: #757575;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 0px;
 }
 
 .profile {
