@@ -459,11 +459,7 @@ footer p.end::before {
 
 .landingPage .mid__wrapper .jumbotron {
   height: 460px;
-<<<<<<< HEAD
   background-color: #42A5F5;
-=======
-  background-color: #E3F2FD;
->>>>>>> development
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -539,11 +535,7 @@ footer p.end::before {
 }
 
 .landingPage .our-services .jumbotron .container .display-4 span {
-<<<<<<< HEAD
   color: #42A5F5;
-=======
-  color: #E3F2FD;
->>>>>>> development
   font-size: 20px;
 }
 
@@ -576,11 +568,7 @@ footer p.end::before {
 
 .landingPage .our-team .jumbotron .container .display-4 span {
   font-size: 20px;
-<<<<<<< HEAD
   color: #42A5F5;
-=======
-  color: #E3F2FD;
->>>>>>> development
 }
 
 .landingPage .our-team .jumbotron .container p {
@@ -599,11 +587,7 @@ footer p.end::before {
 
 .landingPage .btm__wrapper .jumbotron {
   height: 121px;
-<<<<<<< HEAD
   background-color: #42A5F5;
-=======
-  background-color: #E3F2FD;
->>>>>>> development
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -627,7 +611,6 @@ footer p.end::before {
 }
 
 .landingPage .btm__wrapper .jumbotron .container a {
-<<<<<<< HEAD
   color: #42A5F5;
 }
 
@@ -691,60 +674,6 @@ footer p.end::before {
 
 .detailArticle .card__content .card-title.nutrisi .card-text {
   font-size: 20px;
-=======
-  color: #E3F2FD;
-}
-
-.detailArticle {
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-.detailArticle .article .h2 {
-  font-size: 60px;
-  font-weight: bold;
-}
-
-.detailArticle .card__content .card {
-  border-radius: 8px;
-  border: none;
-}
-
-.detailArticle .card__content .card-img-top {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.detailArticle .card__content .card-body {
-  padding-top: 18px;
-  padding-bottom: 16px;
-  padding-right: 24px;
-  padding-left: 24px;
-  min-height: 310px;
-}
-
-.detailArticle .card__content .card-body .btn-success {
-  background-color: #00B292;
-  border-color: #00B292;
-}
-
-.detailArticle .card__content .card-body #tombolartikel {
-  font-weight: 600;
-  padding: 2px 8px;
-  font-size: 16px;
-  margin-bottom: 8px !important;
-}
-
-.detailArticle .card__content .card-body h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.detailArticle .card__content .card-body p {
-  color: #757575;
-  font-size: 20px;
-  line-height: 27px;
-  margin-bottom: 0px;
->>>>>>> development
 }
 
 .profile {
