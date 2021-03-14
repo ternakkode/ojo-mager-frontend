@@ -446,7 +446,7 @@ footer p.end::before {
 
 .landingPage .mid__wrapper .jumbotron {
   height: 460px;
-  background-color: #E3F2FD;
+  background-color: #42A5F5;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -522,7 +522,7 @@ footer p.end::before {
 }
 
 .landingPage .our-services .jumbotron .container .display-4 span {
-  color: #E3F2FD;
+  color: #42A5F5;
   font-size: 20px;
 }
 
@@ -555,7 +555,7 @@ footer p.end::before {
 
 .landingPage .our-team .jumbotron .container .display-4 span {
   font-size: 20px;
-  color: #E3F2FD;
+  color: #42A5F5;
 }
 
 .landingPage .our-team .jumbotron .container p {
@@ -574,7 +574,7 @@ footer p.end::before {
 
 .landingPage .btm__wrapper .jumbotron {
   height: 121px;
-  background-color: #E3F2FD;
+  background-color: #42A5F5;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -598,7 +598,7 @@ footer p.end::before {
 }
 
 .landingPage .btm__wrapper .jumbotron .container a {
-  color: #E3F2FD;
+  color: #42A5F5;
 }
 
 .detailArticle .card__content p {
