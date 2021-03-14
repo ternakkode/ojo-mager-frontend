@@ -68,7 +68,7 @@
         <div class="card__contentartikel">
             <div class="container">
                 <div class="row">
-                    <% articles.forEach(article=> { %>
+                    <% articles.data.forEach(article=> { %>
                     <div class="col-md-4 col-12">
                         <a href="/article/<%= article.slug %>" style="text-decoration: none; color: inherit;">
                             <div class="card shadow-sm">
@@ -98,21 +98,31 @@
                 <div class="container">
                     <div class="col-5 mx-auto">
                         <ul class="pagination">
-                            <li class="page-item disable">
-                                <a class="page-link" href="#" tabindex="-1"> Sebelumnya </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item">
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#"> Selanjutnya </a>
-                            </li>
+                            <% if (articles.totalPage > 1) { %>
+                                <% if (articles.previousPage) { %>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=<%= articles.previousPage %>" tabindex="-1"> Sebelumnya </a>
+                                    </li>
+                                <% } else { %>
+                                    <li class="page-item disable">
+                                        <a class="page-link" href="#" tabindex="-1"> Sebelumnya </a>
+                                    </li>
+                                <% } %>
+
+                                <% for (let i = 1; i <= articles.totalPage; i++) { %>
+                                    <li class="page-item"><a class="page-link" href="?page=<%= i %>"><%= i %></a></li>
+                                <% } %>
+                                
+                                <% if (articles.nextPage) { %>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=<%= articles.nextPage %>" tabindex="-1"> Selanjutnya </a>
+                                    </li>
+                                <% } else { %>
+                                    <li class="page-item disable">
+                                        <a class="page-link" href="#" tabindex="-1"> Selanjutnya </a>
+                                    </li>
+                                <% } %>
+                            <% } %> 
                         </ul>
                     </div>
                 </div>

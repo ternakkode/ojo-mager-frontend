@@ -7,23 +7,25 @@ const isLogin = require('../middleware/isLogin');
 const isVerified = require('../middleware/isVerified');
 
 programsRoute.get('/program', isLogin, isVerified, async (req, res) => {
-    const { title, type } = req.query;
-
+    const { title, type, page } = req.query;
+    console.log('sampe sini');
     const programApi = new Program();
-    let getAllProgram = await programApi.getPrograms(title, type, null, null);
 
     let programs = [];
-    if (getAllProgram.status == 200) {
-        programs = getAllProgram.data.data;
-    }
+    await programApi.getPrograms(title, type, null, 9, true, page).then(res => {
+        programs = res.data.data;
+    }).catch(err => {
+
+    });
 
     const programTypeApi = new ProgramType();
-    let getAllProgramType = await programTypeApi.getProgramTypes();
-    
+
     let programTypes = [];
-    if (getAllProgramType.status == 200) {
-        programTypes = getAllProgramType.data.data;
-    }
+    await programTypeApi.getProgramTypes().then(res => {
+        programTypes = res.data.data;
+    }).catch(err => {
+
+    });
 
     res.render('programs/index', {
         programs, 
