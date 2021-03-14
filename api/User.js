@@ -100,7 +100,7 @@ class User extends Base {
         return await this.createRequest();
     }
 
-    async getFavoritesPrograms(token, title = null, category = null, isRandom = false, limit = null) {
+    async getFavoritesPrograms(token, title = null, category = null, isRandom = false, limit = null, isPaginated = false, page = 1) {
         if (title) {
             this.addParams('title', title);
         }
@@ -116,7 +116,15 @@ class User extends Base {
         if (limit) {
             this.addParams('limit', limit);
         }
+        
+        if (isPaginated) {
+            this.addParams('isPaginated', isPaginated);
+        }
 
+        if (page) {
+            this.addParams('page', page);
+        }
+        
         this.needLogin(token);
         this.setEndpoint(this.feature_url + '/favorites-programs');
         this.setMethod('get');

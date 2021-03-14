@@ -4,15 +4,25 @@ const Article = require('../api/Article');
 const ArticleCategory = require('../api/ArticleCategory');
 
 articlesRoute.get('/article', async (req, res) => {
-    const { category, title } = req.query;
+    const { category, title, page } = req.query;
 
     const articleApi = new Article();
-    const getAllArticle = await articleApi.getArticles(title, category, null, null);
-    const articles = getAllArticle.data.data;
+    
+    let articles = [];
+    await articleApi.getArticles(title, category, null, 9, true, page).then(res =>{
+        articles = res.data.data;
+    }).catch(err => {
+
+    });
 
     const articleCategoryApi = new ArticleCategory();
-    const getAllArticleCategory = await articleCategoryApi.getArticleCategories();
-    const articleCategories = getAllArticleCategory.data.data;
+
+    let articleCategories = [];
+    await articleCategoryApi.getArticleCategories().then(res => {
+        articleCategories = res.data.data;
+    }).catch(err => {
+
+    });
 
     res.render('articles/index', { articles, articleCategories });
 });

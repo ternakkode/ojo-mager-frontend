@@ -6,7 +6,7 @@ class Article extends Base {
         this.feature_url = 'articles'
     }
 
-    async getArticles(title = null, category = null, isRandom = false, limit = null) {        
+    async getArticles(title = null, category = null, isRandom = false, limit = null, isPaginated = false, page = 1) {        
         if (title) {
             this.addParams('title', title);
         }
@@ -21,6 +21,14 @@ class Article extends Base {
 
         if (limit) {
             this.addParams('limit', limit);
+        }
+
+        if (isPaginated) {
+            this.addParams('isPaginated', isPaginated);
+        }
+
+        if (page) {
+            this.addParams('page', page);
         }
         
         this.setEndpoint(this.feature_url);

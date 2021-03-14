@@ -75,12 +75,12 @@ usersRoute.get('/verification/process', isUnauthorized, async (req, res) => {
 });
 
 usersRoute.get('/program-favorite', isLogin, isVerified, async (req, res) =>{
-    const { title, type } = req.query;
+    const { title, type, page } = req.query;
     const token = req.cookies.jwt_token;
 
     const userApi = new User();
     let programFavorites = [];
-    await userApi.getFavoritesPrograms(token, title, type, null, null).then(res => {
+    await userApi.getFavoritesPrograms(token, title, type, null, 9, true, page).then(res => {
         programFavorites = res.data.data;
     }).catch(err => {
 
