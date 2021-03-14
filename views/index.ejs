@@ -228,14 +228,19 @@
                         <p>Dari Sabang sampai Merauke, berjajar tim kami</p>
                     </div>
                     <br>
-                    <div class="swiper-container">
+                    <!-- <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="card">
                                     <img class="card-img-top" src="/images/IMG_Firhan.jpeg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">Firhan</h5>
-                                        <p class="card-text">Tech Lead</p>
+                                        <p class="card-text">
+                                            Tech Lead <br>
+                                            <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a> <br>
+                                            <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a> <br>
+                                            <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a> <br>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -314,8 +319,106 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Add Pagination -->
+                    <div class="swiper-container" id="swiper-container2" style="width:800px;">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide active-slider">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Firhan.jpeg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Firhan</h5>
+                                        <p class="card-text">
+                                            Tech Lead
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-img-top"
+                                        src="/images/IMG_Helmi.jpeg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Helmi</h5>
+                                        <p class="card-text">FE Lead</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Fahri.jpeg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Fahri</h5>
+                                        <p class="card-text">UI/UX</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-img-top" src="/images/IMG_Fatimah.jpeg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Fatimah</h5>
+                                            <p class="card-text">UI/UX</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-img-top" src="/images/IMG_Erwin.jpeg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Erwin</h5>
+                                            <p class="card-text">Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-img-top" src="images/IMG_Clemens.jpeg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Clemens</h5>
+                                            <p class="card-text">Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-img-top" src="/images/IMG_Argo.jpeg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Argo</h5>
+                                            <p class="card-text">Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Dimas.jpeg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dimas</h5>
+                                        <p class="card-text">Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/IMG_Zaki.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Zaki</h5>
+                                        <p class="card-text">Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row justify-content-center">
                         <div class="swiper-pagination"></div>
                     </div>
@@ -346,19 +449,12 @@
     <%- include('./includes/footer.ejs')%>
     <%- include('./includes/end.ejs')%>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            effect: 'cube',
-            grabCursor: true,
-            cubeEffect: {
-                shadow: true,
-                slideShadows: true,
-                shadowOffset: 20,
-                shadowScale: 0.94,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
+        var mySwiper2 = new Swiper('#swiper-container2', {
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true,
+            slidesPerView: 3
+
+        })
     </script>
 </body>
 
