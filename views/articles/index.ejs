@@ -101,7 +101,15 @@
                             <% if (articles.totalPage > 1) { %>
                                 <% if (articles.previousPage) { %>
                                     <li class="page-item">
-                                        <a class="page-link" href="?page=<%= articles.previousPage %>" tabindex="-1"> Sebelumnya </a>
+                                        <a class="page-link" 
+                                            <% if (category) { %>
+                                                href="?category=<%= category %>&page=<%= articles.previousPage %>" 
+                                            <% } else if (title) { %>
+                                                href="?title=<%= title %>&page=<%= articles.previousPage %>" 
+                                            <% } else { %>
+                                                href="?page=<%= articles.previousPage %>" 
+                                            <% } %>
+                                        tabindex="-1"> Sebelumnya </a>
                                     </li>
                                 <% } else { %>
                                     <li class="page-item disable">
@@ -110,13 +118,27 @@
                                 <% } %>
 
                                 <% for (let i = 1; i <= articles.totalPage; i++) { %>
-                                    <li class="page-item"><a class="page-link" href="?page=<%= i %>"><%= i %></a></li>
+                                    <li class="page-item"><a class="page-link"
+                                        <% if (category) { %>
+                                            href="?category=<%= category %>&page=<%= i %>" 
+                                        <% } else if (title) { %>
+                                            href="?title=<%= title %>&page=<%= i %>" 
+                                        <% } else { %>
+                                            href="?page=<%= i %>"
+                                        <% } %>
+                                    ><%= i %></a></li>
                                 <% } %>
                                 
                                 <% if (articles.nextPage) { %>
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page=<%= articles.nextPage %>" tabindex="-1"> Selanjutnya </a>
-                                    </li>
+                                    <a class="page-link" 
+                                            <% if (category) { %>
+                                                href="?category=<%= category %>&page=<%= articles.nextPage %>" 
+                                            <% } else if (title) { %>
+                                                href="?title=<%= title %>&page=<%= articles.nextPage %>" 
+                                            <% } else { %>
+                                                href="?page=<%= articles.nextPage %>" 
+                                            <% } %>
+                                        tabindex="-1"> Selanjutnya </a>
                                 <% } else { %>
                                     <li class="page-item disable">
                                         <a class="page-link" href="#" tabindex="-1"> Selanjutnya </a>

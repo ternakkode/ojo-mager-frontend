@@ -13,9 +13,7 @@
     <%- include('./../includes/end.ejs') %>
     <% if (isSuccess) { %>
         <script>
-            successAlertWithTimer('Berhasil memverifikasi akun anda');
-            const token = getCookie('jwt_token');
-            
+            successAlertWithTimer('Berhasil memverifikasi akun anda');            
             if (token) {
                 setTimeout(()=> {
                     window.location.replace('/');

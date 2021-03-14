@@ -27,6 +27,8 @@ programsRoute.get('/program', isLogin, isVerified, async (req, res) => {
     });
 
     res.render('programs/index', {
+        title,
+        type,
         programs, 
         programTypes,
         parseSecond: timeUtils.parseSecond,
