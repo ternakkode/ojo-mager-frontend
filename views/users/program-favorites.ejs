@@ -111,7 +111,15 @@
                                     <% if (programFavorites.totalPage > 1) { %>
                                         <% if (programFavorites.previousPage) { %>
                                             <li class="page-item">
-                                                <a class="page-link" href="?page=<%= programFavorites.previousPage %>" tabindex="-1"> Sebelumnya </a>
+                                                <a class="page-link" 
+                                                    <% if (type) { %>
+                                                        href="?type=<%= type %>&page=<%= programFavorites.previousPage %>" 
+                                                    <% } else if (title) { %>
+                                                        href="?title=<%= title %>&page=<%= programFavorites.previousPage %>" 
+                                                    <% } else { %>
+                                                        href="?page=<%= programFavorites.previousPage %>" 
+                                                    <% } %>
+                                                tabindex="-1"> Sebelumnya </a>
                                             </li>
                                         <% } else { %>
                                             <li class="page-item disable">
@@ -120,13 +128,27 @@
                                         <% } %>
         
                                         <% for (let i = 1; i <= programFavorites.totalPage; i++) { %>
-                                            <li class="page-item"><a class="page-link" href="?page=<%= i %>"><%= i %></a></li>
+                                            <li class="page-item"><a class="page-link"
+                                                <% if (type) { %>
+                                                    href="?type=<%= type %>&page=<%= i %>" 
+                                                <% } else if (title) { %>
+                                                    href="?title=<%= title %>&page=<%= i %>" 
+                                                <% } else { %>
+                                                    href="?page=<%= i %>"
+                                                <% } %>
+                                            ><%= i %></a></li>
                                         <% } %>
                                         
                                         <% if (programFavorites.nextPage) { %>
-                                            <li class="page-item">
-                                                <a class="page-link" href="?page=<%= programFavorites.nextPage %>" tabindex="-1"> Selanjutnya </a>
-                                            </li>
+                                            <a class="page-link" 
+                                                    <% if (type) { %>
+                                                        href="?type=<%= type %>&page=<%= programFavorites.nextPage %>" 
+                                                    <% } else if (title) { %>
+                                                        href="?title=<%= title %>&page=<%= programFavorites.nextPage %>" 
+                                                    <% } else { %>
+                                                        href="?page=<%= programFavoritess.nextPage %>" 
+                                                    <% } %>
+                                                tabindex="-1"> Selanjutnya </a>
                                         <% } else { %>
                                             <li class="page-item disable">
                                                 <a class="page-link" href="#" tabindex="-1"> Selanjutnya </a>

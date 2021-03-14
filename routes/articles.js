@@ -24,7 +24,7 @@ articlesRoute.get('/article', async (req, res) => {
 
     });
 
-    res.render('articles/index', { articles, articleCategories });
+    res.render('articles/index', { category, title, articles, articleCategories });
 });
 
 articlesRoute.get('/article/:slug', async (req, res) => {

@@ -96,6 +96,8 @@ usersRoute.get('/program-favorite', isLogin, isVerified, async (req, res) =>{
 
     
     res.render('users/program-favorites', {
+        title,
+        type,
         user: req.user,
         programFavorites,
         programFavoriteTypes,

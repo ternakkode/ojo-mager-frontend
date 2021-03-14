@@ -117,8 +117,11 @@ html {
           filter: invert(1);
 }
 
-header .navbar {
+header {
   margin-bottom: 72px;
+}
+
+header .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: white;
