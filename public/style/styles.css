@@ -930,8 +930,11 @@ footer p.end::before {
 }
 
 .detail__olahraga .swiper-slide .card {
-  border-radius: 12px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.detail__olahraga .swiper-slide .card-body {
+  min-height: 250px;
 }
 
 .detail__olahraga .swiper-slide .swiper-slide-shadow-left, .detail__olahraga .swiper-slide .swiper-slide-shadow-right {

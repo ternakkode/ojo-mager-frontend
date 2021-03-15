@@ -138,8 +138,11 @@
         height: 100%;
 
         .card{
-            border-radius: 12px;
-            border: 2px solid rgba($color: #000000, $alpha: .2);
+            border-radius: 8px;
+        }
+
+        .card-body {
+            min-height: 250px;
         }
         
         .swiper-slide-shadow-left, .swiper-slide-shadow-right{
