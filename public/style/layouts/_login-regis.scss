@@ -1,5 +1,10 @@
 .login{
     .content__login{
+        .logo{
+            position: relative;
+            top: -140px;
+            left: -51px;
+        }
         form{
             label{
                 font-weight: 400;
@@ -35,6 +40,11 @@
 
 .register{ 
     .content__register{
+        .logo{
+            position: relative;
+            top: -100px;
+            left: -50px;
+        }
         .formBox{
             width: 60%;
 
@@ -90,6 +100,11 @@
 
 .verification{
     .content__verification{
+        .logo{
+            position: relative;
+            top: -222px;
+            left: -50px;
+        }
         .formBox{
             width: 60%;
             
@@ -152,4 +167,20 @@
             object-fit: cover;
         }
     }
+}
+
+.content__forgotPassword {
+    .logo{
+            position: relative;
+            top: -210px;
+            left: -50px;
+        }
+}
+
+.content__changePassword {
+    .logo{
+            position: relative;
+            top: -135px;
+            left: -51px;
+        }
 }
