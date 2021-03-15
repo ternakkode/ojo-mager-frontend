@@ -48,7 +48,7 @@ usersRoute.get('/forgot-password/save', isUnauthorized, async (req, res) => {
     res.render('users/save-forgot-password', { isSuccess, error, code });
 });
 
-usersRoute.get('/verification', isUnauthorized, async (req, res) => {
+usersRoute.get('/verification', async (req, res) => {
     res.render('users/verification')
 });
 
