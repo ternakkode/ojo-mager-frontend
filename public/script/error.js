@@ -19,6 +19,8 @@ function errorHandling(err) {
                 return customErrorAlert('Anda telah berlangganan, jika ingin berhenti silahkan ubah melalui halaman profile');
             }
             break;
+        case 403:
+            return customErrorAlert('Anda tidak memiliki akses, pastikan telah login & verifikasi email terlebih dahulu')
         case 404:
             switch(errorMessage){
                 case 'USER_NOT_FOUND':
@@ -34,7 +36,8 @@ function errorHandling(err) {
         case 500:
             return unexpectedErrorAlert();
         default:
-            breakl
+            return unexpectedErrorAlert();
+            break;
     }
 }
 
