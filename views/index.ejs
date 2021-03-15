@@ -177,7 +177,7 @@
                         </p>
                     </div>
                     <div class="swiper-container" id="swiper-container2" style="width:1000px;margin-bottom: 30px;">
-                        <div class="swiper-wrapper">
+                        <div class="swiper-wrapper p-3">
                             <div class="swiper-slide shadow rounded">
                                 <div class="card">
                                     <img class="card-img-top" src="/images/IMG_Fahri.jpeg" alt="Card image cap">
@@ -285,7 +285,7 @@
                                             Argo Satrio Utomo</h5>
                                         <p class="card-text text-muted" style="margin-bottom: 2px !important;">Developer</p>
                                         <div class="justify-content-center text-center">
-                                            <a href="linkedin.com/in/argosatrioutomo"
+                                            <a href="https://www.linkedin.com/in/argosatrioutomo/"
                                                 class="fab fa-linkedin mr-1"></a>
                                             <a href="https://www.instagram.com/argogroar" class="fab fa-instagram mr-1"></a>
                                             <a href="mailto:argosatrio30@gmail.com"
@@ -329,6 +329,9 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
             </div>
@@ -363,7 +366,20 @@
             watchSlidesProgress: true,
             watchSlidesVisibility: true,
             spaceBetween: 30,
-            slidesPerView: 4
+            slidesPerView: 3,
+            loop:true,
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 30,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         })
 
         $('#subscribeNewsletter').click(e => {
