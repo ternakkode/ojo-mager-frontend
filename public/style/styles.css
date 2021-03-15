@@ -223,6 +223,12 @@ footer p.end::before {
   margin-top: 60px;
 }
 
+.login .content__login .logo {
+  position: relative;
+  top: -140px;
+  left: -51px;
+}
+
 .login .content__login form label {
   font-weight: 400;
   font-size: 16px;
@@ -250,6 +256,12 @@ footer p.end::before {
 
 .login .content__login .registerBox a {
   display: inline-block;
+}
+
+.register .content__register .logo {
+  position: relative;
+  top: -100px;
+  left: -50px;
 }
 
 .register .content__register .formBox {
@@ -288,6 +300,12 @@ footer p.end::before {
   padding-left: 20px;
   font-weight: 300;
   font-size: 14px;
+}
+
+.verification .content__verification .logo {
+  position: relative;
+  top: -222px;
+  left: -50px;
 }
 
 .verification .content__verification .formBox {
@@ -359,6 +377,18 @@ footer p.end::before {
   left: 0;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.content__forgotPassword .logo {
+  position: relative;
+  top: -210px;
+  left: -50px;
+}
+
+.content__changePassword .logo {
+  position: relative;
+  top: -135px;
+  left: -51px;
 }
 
 .landingPage {
